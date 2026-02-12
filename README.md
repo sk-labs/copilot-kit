@@ -5,13 +5,13 @@
 ## Quick Install
 
 ```bash
-npx @vudovn/copilot-kit init
+npx @sk-labs/copilot-kit init
 ```
 
 Or install globally:
 
 ```bash
-npm install -g @vudovn/copilot-kit
+npm install -g @sk-labs/copilot-kit
 copilot-kit init
 ```
 

@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `.github/copilot-instructions.md` — Global behavior rules
 - **Agent Format**: Updated YAML frontmatter to Copilot schema (`description`, `tools`, `agents`, `handoffs`, `model`)
 - **Workflow Format**: Renamed to "Prompt Workflows" using `.prompt.md` format with `agent:`, `tools:` frontmatter
-- **CLI**: `ag-kit` → `copilot-kit`, npm package `@vudovn/ag-kit` → `@vudovn/copilot-kit`
+- **CLI**: `ag-kit` → `copilot-kit`, npm package `@vudovn/ag-kit` → `@sk-labs/copilot-kit`
 - **Documentation website**: Full rebrand with purple-indigo-blue color scheme
 - **README**: Rewritten for GitHub Copilot audience with VS Code setup instructions
 

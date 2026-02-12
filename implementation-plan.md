@@ -109,7 +109,7 @@ The previous plan assumed Copilot had no file-based agent system. **This was wro
 | :--- | :--- |
 | **Home (`/`)** | Replace "Google Antigravity" SVG + hero. New tagline, CTAs to GitHub & VS Code docs |
 | **Docs Overview** | Reframe around Copilot's 4-pillar architecture: Agents + Skills + Prompts + Instructions |
-| **Installation** | `npx @vudovn/copilot-kit init` → installs `.github/` structure. Explain `copilot-instructions.md`, agents, skills, prompts folders |
+| **Installation** | `npx @sk-labs/copilot-kit init` → installs `.github/` structure. Explain `copilot-instructions.md`, agents, skills, prompts folders |
 | **Agents** | Update to explain `.agent.md` format, `tools:` restrictions, `handoffs:`, subagent delegation. Show VS Code agents dropdown |
 | **Skills** | Update to explain `SKILL.md` format, progressive disclosure, agentskills.io standard. Include script/resource bundling |
 | **Workflows** | Rename to "Prompts / Slash Commands". Explain `.prompt.md` format, `agent:` reference, `${variables}` |
@@ -188,6 +188,6 @@ These are features that Copilot supports but the original Gemini kit didn't have
 
 - **Branch**: `copilot-kit` (created)
 - **Repository**: Push to `vudovn/antigravity-kit` on the `copilot-kit` branch, then optionally fork/rename
-- **npm package**: Update `@vudovn/ag-kit` → `@vudovn/copilot-kit` (or add Copilot as a target flag)
+- **npm package**: Update `@vudovn/ag-kit` → `@sk-labs/copilot-kit` (or add Copilot as a target flag)
 - **Documentation site**: Deploy updated site to Vercel
 - **Version**: Bump to `3.0.0` — this is a major platform migration
