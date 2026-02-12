@@ -1,81 +1,68 @@
-# Antigravity Kit
+# Copilot Kit
 
-> AI Agent templates with Skills, Agents, and Workflows
-
-<div  align="center">
-    <a href="https://unikorn.vn/p/antigravity-kit?ref=unikorn" target="_blank"><img src="https://unikorn.vn/api/widgets/badge/antigravity-kit?theme=dark" alt="Antigravity Kit - Nổi bật trên Unikorn.vn" style="width: 210px; height: 54px;" width="210" height="54" /></a>
-    <a href="https://unikorn.vn/p/antigravity-kit?ref=unikorn" target="_blank"><img src="https://unikorn.vn/api/widgets/badge/antigravity-kit/rank?theme=dark&type=daily" alt="Antigravity Kit - Hàng ngày" style="width: 250px; height: 64px;" width="250" height="64" /></a>
-    <a href="https://launch.j2team.dev/products/antigravity-kit" target="_blank"><img src="https://launch.j2team.dev/badge/antigravity-kit/dark" alt="Antigravity Kit on J2TEAM Launch" width="250" height="54" /></a>
-</div>
+> Custom Agents, Skills & Prompt Workflows for GitHub Copilot in VS Code
 
 ## Quick Install
 
 ```bash
-npx @vudovn/ag-kit init
+npx @vudovn/copilot-kit init
 ```
 
 Or install globally:
 
 ```bash
-npm install -g @vudovn/ag-kit
-ag-kit init
+npm install -g @vudovn/copilot-kit
+copilot-kit init
 ```
 
-This installs the `.agent` folder containing all templates into your project.
+This installs agents, skills, and prompt files into your `.github/` directory — ready for GitHub Copilot in VS Code.
 
-### ⚠️ Important Note on `.gitignore`
-If you are using AI-powered editors like **Cursor** or **Windsurf**, adding the `.agent/` folder to your `.gitignore` may prevent the IDE from indexing the workflows. This results in slash commands (like `/plan`, `/debug`) not appearing in the chat suggestion dropdown.
-
-**Recommended Solution:**
-To keep the `.agent/` folder local (not tracked by Git) while maintaining AI functionality:
-1. Ensure `.agent/` is **NOT** in your project's `.gitignore`.
-2. Instead, add it to your local exclude file: `.git/info/exclude`
+### Prerequisites
+- **VS Code** with [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) extension
+- **Node.js** 16.0 or later
 
 ## What's Included
 
-| Component     | Count | Description                                                        |
-| ------------- | ----- | ------------------------------------------------------------------ |
-| **Agents**    | 20    | Specialist AI personas (frontend, backend, security, PM, QA, etc.) |
-| **Skills**    | 37    | Domain-specific knowledge modules                                  |
-| **Workflows** | 11    | Slash command procedures                                           |
+| Component           | Count | Description                                                        |
+| ------------------- | ----- | ------------------------------------------------------------------ |
+| **Agents**          | 20    | Custom agent personas (`.agent.md` in `.github/agents/`)           |
+| **Skills**          | 37    | Domain-specific knowledge modules (`SKILL.md` in `.github/skills/`) |
+| **Prompt Workflows**| 11    | Slash command prompts (`.prompt.md` in `.github/prompts/`)         |
 
+### Folder Structure
+
+```
+.github/
+├── agents/                    # Custom Agents (.agent.md)
+├── skills/                    # Agent Skills (SKILL.md per domain)
+├── prompts/                   # Prompt Workflows (.prompt.md)
+├── instructions/              # Path-specific instructions
+├── copilot-instructions.md    # Global behavior rules
+└── AGENTS.md                  # Cross-agent documentation
+```
 
 ## Usage
 
 ### Using Agents
 
-**No need to mention agents explicitly!** The system automatically detects and applies the right specialist(s):
+Invoke agents by name in Copilot Chat's agent mode:
 
 ```
-You: "Add JWT authentication"
-AI: 🤖 Applying @security-auditor + @backend-specialist...
-
-You: "Fix the dark mode button"
-AI: 🤖 Using @frontend-specialist...
-
-You: "Login returns 500 error"
-AI: 🤖 Using @debugger for systematic analysis...
+@frontend-specialist Add JWT authentication
+@debugger Fix the dark mode button
+@security-auditor Review the auth flow
 ```
 
-**How it works:**
+Each agent file supports YAML frontmatter with:
+- `description` — Shown in Copilot Chat
+- `tools` — Allowed VS Code tools (editFiles, codebase, terminal, fetch)
+- `agents` — Sub-agents for delegation
+- `handoffs` — Agents this agent can hand off to
+- `model` — Preferred LLM model
 
-- Analyzes your request silently
+### Using Prompt Workflows
 
-- Detects domain(s) automatically (frontend, backend, security, etc.)
-- Selects the best specialist(s)
-- Informs you which expertise is being applied
-- You get specialist-level responses without needing to know the system architecture
-
-**Benefits:**
-
-- ✅ Zero learning curve - just describe what you need
-- ✅ Always get expert responses
-- ✅ Transparent - shows which agent is being used
-- ✅ Can still override by mentioning agent explicitly
-
-### Using Workflows
-
-Invoke workflows with slash commands:
+Prompt files become slash commands in Copilot Chat:
 
 | Command          | Description                           |
 | ---------------- | ------------------------------------- |
@@ -101,30 +88,31 @@ Example:
 
 ### Using Skills
 
-Skills are loaded automatically based on task context. The AI reads skill descriptions and applies relevant knowledge.
+Skills are loaded progressively by agents based on task context. They follow the [agentskills.io](https://agentskills.io) open standard.
 
 ## CLI Tool
 
-| Command         | Description                               |
-| --------------- | ----------------------------------------- |
-| `ag-kit init`   | Install `.agent` folder into your project |
-| `ag-kit update` | Update to the latest version              |
-| `ag-kit status` | Check installation status                 |
+| Command              | Description                                      |
+| -------------------- | ------------------------------------------------ |
+| `copilot-kit init`   | Install `.github/` structure into your project   |
+| `copilot-kit update` | Update to the latest version                     |
+| `copilot-kit status` | Check installation status                        |
 
 ### Options
 
 ```bash
-ag-kit init --force        # Overwrite existing .agent folder
-ag-kit init --path ./myapp # Install in specific directory
-ag-kit init --branch dev   # Use specific branch
-ag-kit init --quiet        # Suppress output (for CI/CD)
-ag-kit init --dry-run      # Preview actions without executing
+copilot-kit init --force        # Overwrite existing .github folder
+copilot-kit init --path ./myapp # Install in specific directory
+copilot-kit init --branch dev   # Use specific branch
+copilot-kit init --quiet        # Suppress output (for CI/CD)
+copilot-kit init --dry-run      # Preview actions without executing
 ```
 
 ## Documentation
 
-- **[Web App Example](https://antigravity-kit.vercel.app//docs/guide/examples/brainstorm)** - Step-by-step guide to creating a web application
-- **[Online Docs](https://antigravity-kit.vercel.app//docs)** - Browse all documentation online
+- **[Online Docs](https://copilot-kit.vercel.app/docs)** — Browse all documentation
+- **[GitHub Copilot Custom Agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents)** — VS Code docs
+- **[Prompt Files](https://code.visualstudio.com/docs/copilot/customization/prompt-files)** — VS Code docs
 
 ## Buy me coffee
 
@@ -132,12 +120,6 @@ ag-kit init --dry-run      # Preview actions without executing
   <a href="https://buymeacoffee.com/vudovn">
     <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee" />
   </a>
-</p>
-
-<p align="center"> - or - </p>
-
-<p align="center">
-  <img src="https://img.vietqr.io/image/mbbank-0779440918-compact.jpg" alt="Buy me coffee" width="200" />
 </p>
 
 ## License

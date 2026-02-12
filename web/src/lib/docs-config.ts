@@ -13,7 +13,7 @@ export const docsConfig = {
             href: "/docs/skills",
         },
         {
-            title: "Workflows",
+            title: "Prompts",
             href: "/docs/workflows",
         },
     ],
@@ -159,7 +159,7 @@ export const docsConfig = {
             ],
         },
         {
-            title: "Workflows",
+            title: "Prompt Workflows",
             items: [
                 {
                     title: "Overview",

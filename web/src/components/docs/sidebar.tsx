@@ -17,7 +17,7 @@ const navSections = [
         items: [
             { href: '/docs/agents', label: 'Agents' },
             { href: '/docs/skills', label: 'Skills' },
-            { href: '/docs/workflows', label: 'Workflows' },
+            { href: '/docs/workflows', label: 'Prompt Workflows' },
         ],
     },
     {

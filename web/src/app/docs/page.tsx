@@ -12,8 +12,8 @@ export default function DocsPage() {
                     Documentation
                 </h1>
                 <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                    Welcome to the <span className="before:-inset-x-1 before:-rotate-1 relative z-4 before:pointer-events-none before:absolute before:inset-y-0 before:z-4 before:bg-linear-to-r before:from-blue-500 before:via-purple-500 before:to-orange-500 before:opacity-16 before:mix-blend-hard-light">
-                        Antigravity Kit
+                    Welcome to the <span className="before:-inset-x-1 before:-rotate-1 relative z-4 before:pointer-events-none before:absolute before:inset-y-0 before:z-4 before:bg-linear-to-r before:from-purple-500 before:via-indigo-500 before:to-blue-500 before:opacity-16 before:mix-blend-hard-light">
+                        Copilot Kit
                     </span> documentation.
                 </p>
             </div>
@@ -21,23 +21,23 @@ export default function DocsPage() {
             {/* What is Antigravity Kit */}
             <section className="mb-12">
                 <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
-                    What is <span className="before:-inset-x-1 before:-rotate-1 relative z-4 before:pointer-events-none before:absolute before:inset-y-0 before:z-4 before:bg-linear-to-r before:from-blue-500 before:via-purple-500 before:to-orange-500 before:opacity-16 before:mix-blend-hard-light">
-                        Antigravity Kit
+                    What is <span className="before:-inset-x-1 before:-rotate-1 relative z-4 before:pointer-events-none before:absolute before:inset-y-0 before:z-4 before:bg-linear-to-r before:from-purple-500 before:via-indigo-500 before:to-blue-500 before:opacity-16 before:mix-blend-hard-light">
+                        Copilot Kit
                     </span> ?
                 </h2>
                 <p className="text-base text-zinc-600 dark:text-zinc-400 mb-4">
-                    <span className="before:-inset-x-1 before:-rotate-1 relative z-4 before:pointer-events-none before:absolute before:inset-y-0 before:z-4 before:bg-linear-to-r before:from-blue-500 before:via-purple-500 before:to-orange-500 before:opacity-16 before:mix-blend-hard-light">
-                        Antigravity Kit
-                    </span> is a comprehensive collection of AI Agent templates with Skills, Agents, and Workflows designed to supercharge AI coding assistants for{" "}
+                    <span className="before:-inset-x-1 before:-rotate-1 relative z-4 before:pointer-events-none before:absolute before:inset-y-0 before:z-4 before:bg-linear-to-r before:from-purple-500 before:via-indigo-500 before:to-blue-500 before:opacity-16 before:mix-blend-hard-light">
+                        Copilot Kit
+                    </span> is a comprehensive collection of custom Agents, Skills, and Prompt Workflows designed to supercharge{" "}
                     <a
-                        href="https://antigravity.google/t"
+                        href="https://code.visualstudio.com/docs/copilot/overview"
                         className="text-zinc-900 dark:text-zinc-50 underline underline-offset-4 decoration-zinc-300 dark:decoration-zinc-700 hover:decoration-zinc-900 dark:hover:decoration-zinc-50 transition-colors"
                     >
-                        Antigravity
-                    </a>.
+                        GitHub Copilot
+                    </a> in VS Code.
                 </p>
                 <p className="text-base text-zinc-600 dark:text-zinc-400 mb-4">
-                    Whether you're an individual developer or part of a larger team, Antigravity Kit helps you build better software faster with {skills.length}+ skills, {agents.length}+ specialist agents, and {workflows.length}+ production-ready workflows.
+                    Whether you're an individual developer or part of a larger team, Copilot Kit helps you build better software faster with {skills.length}+ skills, {agents.length}+ specialist agents, and {workflows.length}+ prompt workflows.
                 </p>
             </section>
 
@@ -63,9 +63,9 @@ export default function DocsPage() {
                     </div>
                     <div className="p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
                         <div className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">{workflows.length}+</div>
-                        <div className="text-sm font-medium text-zinc-600 dark:text-zinc-400">Workflows</div>
+                        <div className="text-sm font-medium text-zinc-600 dark:text-zinc-400">Prompt Workflows</div>
                         <p className="text-xs text-zinc-500 dark:text-zinc-500 mt-2">
-                            Slash command procedures for common dev tasks
+                            Slash command prompts for common dev tasks
                         </p>
                     </div>
                 </div>
@@ -124,7 +124,7 @@ export default function DocsPage() {
                             <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">Installation →</h3>
                         </div>
                         <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                            Get started with Antigravity Kit in under a minute
+                            Get started with Copilot Kit in under a minute
                         </p>
                     </Link>
                     <Link

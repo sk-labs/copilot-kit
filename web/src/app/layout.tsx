@@ -23,9 +23,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Antigravity Kit - AI Agent Capability Expansion Toolkit",
-  description: "A comprehensive collection of skills, rules, and workflows to supercharge AI coding assistants for Antigravity. 35+ skills, 57 UI Styles, production-ready workflows.",
-  metadataBase: new URL("https://antigravity-kit.vercel.app/"),
+  title: "Copilot Kit - Custom Agents, Skills & Workflows for GitHub Copilot",
+  description: "A comprehensive collection of custom agents, skills, and prompt workflows to supercharge GitHub Copilot in VS Code. 20+ agents, 37+ skills, 11+ prompt commands.",
+  metadataBase: new URL("https://copilot-kit.vercel.app/"),
   robots: {
     index: true,
     follow: true,
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://antigravity-kit.vercel.app/",
-    siteName: "Antigravity Kit",
+    url: "https://copilot-kit.vercel.app/",
+    siteName: "Copilot Kit",
     images: ["/images/logo.png"],
   },
 };

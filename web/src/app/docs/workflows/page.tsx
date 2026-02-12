@@ -15,39 +15,39 @@ export default function WorkflowsPage() {
             <nav className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 mb-6">
                 <Link href="/docs" className="hover:text-zinc-900 dark:hover:text-zinc-50">Docs</Link>
                 <span>/</span>
-                <span className="text-zinc-900 dark:text-zinc-50">Workflows</span>
+                <span className="text-zinc-900 dark:text-zinc-50">Prompt Workflows</span>
             </nav>
 
             {/* Page Header */}
             <div className="mb-8 pb-8 border-b border-zinc-200 dark:border-zinc-800">
                 <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
-                    Workflows
+                    Prompt Workflows
                 </h1>
                 <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                    Slash command procedures for common development tasks.
+                    Reusable prompt files as slash commands in Copilot Chat.
                 </p>
             </div>
 
             {/* What are Workflows */}
             <section className="mb-12">
                 <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
-                    What are Workflows?
+                    What are Prompt Workflows?
                 </h2>
                 <p className="text-base text-zinc-600 dark:text-zinc-400 mb-4">
-                    Workflows are well-defined, step-by-step procedures for achieving specific development tasks. They're invoked using slash commands and provide consistent, repeatable processes.
+                    Prompt Workflows are reusable <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">.prompt.md</code> files stored in <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">.github/prompts/</code>. They appear as slash commands in Copilot Chat and provide consistent, repeatable processes.
                 </p>
                 <p className="text-base text-zinc-600 dark:text-zinc-400 mb-6">
-                    Each workflow contains specific instructions, decision points, and best practices for its domain.
+                    Each prompt file can specify which agent to use, which tools to allow, and include dynamic variables for flexible execution.
                 </p>
             </section>
 
             {/* How to Use */}
             <section className="mb-12">
                 <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
-                    How to Use Workflows
+                    How to Use Prompt Workflows
                 </h2>
                 <p className="text-base text-zinc-600 dark:text-zinc-400 mb-6">
-                    Simply type a slash command followed by your task description:
+                    Type a slash command in Copilot Chat. Any <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">.prompt.md</code> file in <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">.github/prompts/</code> becomes available:
                 </p>
 
                 <div className="relative group mb-6">
@@ -61,7 +61,7 @@ export default function WorkflowsPage() {
                 <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-4">
                     <p className="text-sm text-blue-900 dark:text-blue-100 mb-0">
                         <Lightbulb className="w-4 h-4 inline" />
-                        <strong className="font-semibold"> Tip:</strong> Some workflows have a <code className="px-1 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 font-mono text-xs">// turbo</code> annotation that allows auto-running safe commands without user approval.
+                        <strong className="font-semibold"> Tip:</strong> Prompt files support variables like <code className="px-1 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 font-mono text-xs">{'{selectedText}'}</code> and <code className="px-1 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 font-mono text-xs">{'{currentFile}'}</code> for dynamic context injection.
                     </p>
                 </div>
             </section>
@@ -69,10 +69,10 @@ export default function WorkflowsPage() {
             {/* Available Workflows */}
             <section className="mb-12">
                 <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
-                    Available Workflows
+                    Available Prompt Workflows
                 </h2>
                 <p className="text-base text-zinc-600 dark:text-zinc-400 mb-6">
-                    {workflows.length} workflows covering common development scenarios:
+                    {workflows.length} prompt workflows covering common development scenarios:
                 </p>
 
                 <div className="space-y-6">
@@ -105,29 +105,31 @@ export default function WorkflowsPage() {
             {/* Creating Custom Workflows */}
             <section className="mb-12">
                 <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
-                    Creating Custom Workflows
+                    Creating Custom Prompt Workflows
                 </h2>
                 <p className="text-base text-zinc-600 dark:text-zinc-400 mb-6">
-                    You can create your own workflows by adding markdown files to <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">.agent/workflows/</code>:
+                    Create your own prompt workflows by adding <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">.prompt.md</code> files to <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">.github/prompts/</code>:
                 </p>
 
                 <div className="relative group mb-6">
                     <pre className="p-4 rounded-lg bg-zinc-900 dark:bg-zinc-950 overflow-x-auto border border-zinc-800 font-mono text-sm">
                         <code className="text-zinc-100">{`---
+agent: backend-specialist
+tools: terminal, editFiles, codebase
 description: Deploy application to staging
 ---
 
 # Deployment Workflow
 
-1. Run tests
+1. Run tests: \${{terminal:npm test}}
 2. Build production bundle
 3. Deploy to staging server
-4. Verify deployment`}</code>
+4. Verify deployment at {url}`}</code>
                     </pre>
                 </div>
 
                 <p className="text-base text-zinc-600 dark:text-zinc-400">
-                    Save as <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">.agent/workflows/deploy-staging.md</code> and invoke with <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">/deploy-staging</code>.
+                    Save as <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">.github/prompts/deploy-staging.prompt.md</code> and invoke with <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">/deploy-staging</code> in Copilot Chat.
                 </p>
             </section>
 

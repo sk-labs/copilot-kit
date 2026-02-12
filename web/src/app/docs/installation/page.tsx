@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Callout } from "@/components/mdx";
 
 export const metadata = {
-  title: "Installation | Antigravity Kit",
-  description: "Get started with Antigravity Kit in under a minute.",
+  title: "Installation | Copilot Kit",
+  description: "Get started with Copilot Kit in under a minute.",
 };
 
 export default function InstallationPage() {
@@ -20,7 +20,7 @@ export default function InstallationPage() {
           Installation
         </h1>
         <p className="text-lg text-zinc-600 dark:text-zinc-400">
-          Get started with Antigravity Kit in under a minute.
+          Get started with Copilot Kit in under a minute.
         </p>
       </div>
 
@@ -29,15 +29,15 @@ export default function InstallationPage() {
           Quick Start
         </h2>
         <p className="text-base text-zinc-600 dark:text-zinc-400 mb-6">
-          The fastest way to install Antigravity Kit is using <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">npx</code> in root project:
+          The fastest way to install Copilot Kit is using <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">npx</code> in root project:
         </p>
 
         <pre className="p-4 rounded-lg bg-zinc-950 overflow-x-auto mb-4 text-sm font-mono text-zinc-100">
-          npx @vudovn/ag-kit init
+          npx @vudovn/copilot-kit init
         </pre>
 
         <Callout type="info">
-          <strong>Note:</strong> This command will create a <code>.agent</code> folder in your current directory containing all templates.
+          <strong>Note:</strong> This command will create a <code>.github</code> folder in your current directory containing all agent, skill, and prompt templates.
         </Callout>
       </section>
 
@@ -46,15 +46,15 @@ export default function InstallationPage() {
           Global Installation
         </h2>
         <p className="text-base text-zinc-600 dark:text-zinc-400 mb-6">
-          Install the CLI globally to use <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">ag-kit</code> command anywhere:
+          Install the CLI globally to use <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-mono">copilot-kit</code> command anywhere:
         </p>
 
         <pre className="p-4 rounded-lg bg-zinc-950 overflow-x-auto mb-2 text-sm font-mono text-zinc-100">
-          npm install -g @vudovn/ag-kit
+          npm install -g @vudovn/copilot-kit
         </pre>
 
         <pre className="p-4 rounded-lg bg-zinc-950 overflow-x-auto mb-4 text-sm font-mono text-zinc-100">
-          cd your-project && ag-kit init
+          cd your-project && copilot-kit init
         </pre>
 
         <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
@@ -71,37 +71,38 @@ export default function InstallationPage() {
         </p>
 
         <pre className="p-4 rounded-lg bg-zinc-950 overflow-x-auto mb-4 text-sm font-mono text-zinc-100">
-{`.agent/
-├── agents/          # 16 Specialist Agents
-├── skills/          # 40+ Skills
-├── workflows/       # 11 Slash Commands
-├── rules/           # Workspace Rules
-└── ARCHITECTURE.md  # Full documentation`}
+{`.github/
+├── agents/          # 16+ Custom Agents (.agent.md)
+├── skills/          # 40+ Agent Skills (SKILL.md)
+├── prompts/         # 11+ Prompt Workflows (.prompt.md)
+├── instructions/    # Path-specific Instructions
+├── copilot-instructions.md  # Global behavior rules
+└── AGENTS.md        # Cross-agent documentation`}
         </pre>
 
         <div className="space-y-4">
           <div className="p-4 rounded-lg border border-zinc-200 dark:border-zinc-800">
             <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-2">agents/</h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-400">
-              Contains 16 specialist AI agent configurations for different domains (frontend, backend, security, etc.)
+              Contains 16+ custom agent definitions as <code className="px-1 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 font-mono text-xs">.agent.md</code> files with YAML frontmatter for tools, handoffs, and model preferences
             </p>
           </div>
           <div className="p-4 rounded-lg border border-zinc-200 dark:border-zinc-800">
             <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-2">skills/</h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-400">
-              40+ domain-specific knowledge modules that agents can use
+              40+ domain-specific skill modules following the <a href="https://agentskills.io" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">agentskills.io</a> open standard, loaded progressively by agents
             </p>
           </div>
           <div className="p-4 rounded-lg border border-zinc-200 dark:border-zinc-800">
-            <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-2">workflows/</h3>
+            <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-2">prompts/</h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-400">
-              11 slash command procedures for common development tasks
+              11+ reusable prompt files (<code className="px-1 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 font-mono text-xs">.prompt.md</code>) accessible as slash commands in Copilot Chat
             </p>
           </div>
           <div className="p-4 rounded-lg border border-zinc-200 dark:border-zinc-800">
-            <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-2">rules/</h3>
+            <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-2">instructions/</h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-400">
-              Workspace configuration including <code className="px-1 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 font-mono text-xs">GEMINI.md</code> for behavior rules
+              Path-specific instruction files (<code className="px-1 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 font-mono text-xs">*.instructions.md</code>) with <code className="px-1 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 font-mono text-xs">applyTo</code> glob patterns for targeted guidance
             </p>
           </div>
         </div>
@@ -112,6 +113,12 @@ export default function InstallationPage() {
           System Requirements
         </h2>
         <ul className="space-y-2 text-base text-zinc-600 dark:text-zinc-400 mb-6">
+          <li className="flex items-start gap-2">
+            <svg className="w-5 h-5 text-green-600 dark:text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span>VS Code with GitHub Copilot extension</span>
+          </li>
           <li className="flex items-start gap-2">
             <svg className="w-5 h-5 text-green-600 dark:text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -138,7 +145,7 @@ export default function InstallationPage() {
           Next Steps
         </h2>
         <p className="text-base text-zinc-600 dark:text-zinc-400 mb-6">
-          Now that you have Antigravity Kit installed, learn about the core concepts:
+          Now that you have Copilot Kit installed, learn about the core concepts:
         </p>
         <div className="grid gap-4 sm:grid-cols-2">
           <Link
