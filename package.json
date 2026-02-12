@@ -4,11 +4,11 @@
   "description": "Custom Agents, Skills & Prompt Workflows for GitHub Copilot in VS Code",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vudovn/copilot-kit.git"
+    "url": "git+https://github.com/sk-labs/copilot-kit.git"
   },
-  "homepage": "https://github.com/vudovn/copilot-kit#readme",
+  "homepage": "https://github.com/sk-labs/copilot-kit#readme",
   "bugs": {
-    "url": "https://github.com/vudovn/copilot-kit/issues"
+    "url": "https://github.com/sk-labs/copilot-kit/issues"
   },
   "keywords": [
     "copilot",

@@ -48,12 +48,12 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <a href="https://github.com/vudovn/copilot-kit" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
+                                <a href="https://github.com/sk-labs/copilot-kit" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
                                     Examples
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/vudovn/copilot-kit/releases" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
+                                <a href="https://github.com/sk-labs/copilot-kit/releases" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
                                     Changelog
                                 </a>
                             </li>
@@ -65,22 +65,22 @@ export default function Footer() {
                         <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-4">Community</h3>
                         <ul className="space-y-3 text-sm">
                             <li>
-                                <a href="https://github.com/vudovn/copilot-kit" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
+                                <a href="https://github.com/sk-labs/copilot-kit" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
                                     GitHub
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/vudovn/copilot-kit/issues" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
+                                <a href="https://github.com/sk-labs/copilot-kit/issues" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
                                     Issues
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/vudovn/copilot-kit/discussions" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
+                                <a href="https://github.com/sk-labs/copilot-kit/discussions" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
                                     Discussions
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/vudovn/copilot-kit/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
+                                <a href="https://github.com/sk-labs/copilot-kit/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
                                     Contributing
                                 </a>
                             </li>
@@ -92,7 +92,7 @@ export default function Footer() {
                         <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-4">Legal</h3>
                         <ul className="space-y-3 text-sm">
                             <li>
-                                <a href="https://github.com/vudovn/copilot-kit/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
+                                <a href="https://github.com/sk-labs/copilot-kit/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
                                     License
                                 </a>
                             </li>
@@ -127,7 +127,7 @@ export default function Footer() {
                     {/* Social Links */}
                     <div className="flex items-center gap-4">
                         <a
-                            href="https://github.com/vudovn/copilot-kit"
+                            href="https://github.com/sk-labs/copilot-kit"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors"

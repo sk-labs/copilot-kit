@@ -114,6 +114,10 @@ copilot-kit init --dry-run      # Preview actions without executing
 - **[GitHub Copilot Custom Agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents)** — VS Code docs
 - **[Prompt Files](https://code.visualstudio.com/docs/copilot/customization/prompt-files)** — VS Code docs
 
+## Credits
+
+Built on [@vudovn](https://github.com/vudovn)'s excellent [Antigravity Kit](https://github.com/vudovn/antigravity-kit), originally designed for Google Gemini AI. This project adapts and extends that work for GitHub Copilot in VS Code.
+
 ## Buy me coffee
 
 <p align="center">

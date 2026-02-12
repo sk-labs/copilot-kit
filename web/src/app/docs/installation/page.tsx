@@ -33,7 +33,7 @@ export default function InstallationPage() {
         </p>
 
         <pre className="p-4 rounded-lg bg-zinc-950 overflow-x-auto mb-4 text-sm font-mono text-zinc-100">
-          npx @vudovn/copilot-kit init
+          npx @sk-labs/copilot-kit init
         </pre>
 
         <Callout type="info">
@@ -50,7 +50,7 @@ export default function InstallationPage() {
         </p>
 
         <pre className="p-4 rounded-lg bg-zinc-950 overflow-x-auto mb-2 text-sm font-mono text-zinc-100">
-          npm install -g @vudovn/copilot-kit
+          npm install -g @sk-labs/copilot-kit
         </pre>
 
         <pre className="p-4 rounded-lg bg-zinc-950 overflow-x-auto mb-4 text-sm font-mono text-zinc-100">
