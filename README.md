@@ -118,14 +118,7 @@ copilot-kit init --dry-run      # Preview actions without executing
 
 Built on [@vudovn](https://github.com/vudovn)'s excellent [Antigravity Kit](https://github.com/vudovn/antigravity-kit), originally designed for Google Gemini AI. This project adapts and extends that work for GitHub Copilot in VS Code.
 
-## Buy me coffee
-
-<p align="center">
-  <a href="https://buymeacoffee.com/vudovn">
-    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee" />
-  </a>
-</p>
 
 ## License
 
-MIT © Vudovn
+MIT © SK-Labs
