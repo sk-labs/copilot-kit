@@ -4,6 +4,7 @@ const https = require('https');
 const chalk = require('chalk');
 const ora = require('ora');
 const AdmZip = require('adm-zip');
+const readline = require('readline');
 
 const GITHUB_REPO = 'sk-labs/copilot-kit';
 const GITHUB_API = 'https://api.github.com';
@@ -19,8 +20,13 @@ async function init(options) {
   // Check if .github exists
   if (fs.existsSync(githubPath) && !options.force && !options.dryRun) {
     console.log(chalk.yellow('⚠️  .github folder already exists!'));
-    console.log(chalk.dim('   Use --force to overwrite\n'));
-    process.exit(1);
+    
+    const shouldOverwrite = await askConfirmation(chalk.bold('Do you want to overwrite it? (y/N) '));
+    
+    if (!shouldOverwrite) {
+      console.log(chalk.yellow('Aborted.\n'));
+      process.exit(0); // Exit gracefully if user says no
+    }
   }
 
   if (options.dryRun) {
@@ -198,6 +204,20 @@ function downloadRepo(branch = 'main') {
         reject(new Error(`Failed to download: HTTP ${response.statusCode}`));
       }
     }).on('error', reject);
+  });
+}
+
+function askConfirmation(question) {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+
+  return new Promise(resolve => {
+    rl.question(question, (answer) => {
+      rl.close();
+      resolve(answer.trim().toLowerCase().startsWith('y'));
+    });
   });
 }
 
