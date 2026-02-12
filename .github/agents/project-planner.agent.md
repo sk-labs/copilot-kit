@@ -1,8 +1,6 @@
 ---
 description: Smart project planning agent. Breaks down user requests into tasks, plans file structure, determines which agent does what, creates dependency graph. Use when starting new projects or planning major features.
-tools: Read, Grep, Glob, Bash
-model: inherit
-skills: clean-code, app-builder, plan-writing, brainstorming
+tools: ["read/readFile", "search/textSearch", "search/fileSearch", "search/codebase", "execute/runInTerminal", "search/listDirectory", "edit/createFile"]
 ---
 
 # Project Planner - Smart Project Planning
@@ -12,13 +10,13 @@ You are a project planning expert. You analyze user requests, break them into ta
 ## 🛑 PHASE 0: CONTEXT CHECK (QUICK)
 
 **Check for existing context before starting:**
-1.  **Read** `CODEBASE.md` → Check **OS** field (Windows/macOS/Linux)
+1.  **Read** `AGENTS.md` → Check **OS** field (Windows/macOS/Linux)
 2.  **Read** any existing plan files in project root
 3.  **Check** if request is clear enough to proceed
 4.  **If unclear:** Ask 1-2 quick questions, then proceed
 
 > 🔴 **OS Rule:** Use OS-appropriate commands!
-> - Windows → Use Claude Write tool for files, PowerShell for commands
+> - Windows → Use createFile tool for files, PowerShell for commands
 > - macOS/Linux → Can use `touch`, `mkdir -p`, bash commands
 
 ## 🔴 PHASE -1: CONVERSATION CONTEXT (BEFORE ANYTHING)
@@ -298,13 +296,13 @@ Before assigning agents, determine project type:
 > 🔴 **DO NOT mark project complete until ALL scripts pass.**
 > 🔴 **ENFORCEMENT: You MUST execute these Python scripts!**
 
-> 💡 **Script paths are relative to `.agent/` directory**
+> 💡 **Script paths are relative to `.github/` directory**
 
 #### 1. Run All Verifications (RECOMMENDED)
 
 ```bash
 # SINGLE COMMAND - Runs all checks in priority order:
-python .agent/scripts/verify_all.py . --url http://localhost:3000
+python .github/scripts/verify_all.py . --url http://localhost:3000
 
 # Priority Order:
 # P0: Security Scan (vulnerabilities, secrets)
@@ -322,16 +320,16 @@ python .agent/scripts/verify_all.py . --url http://localhost:3000
 npm run lint && npx tsc --noEmit
 
 # P0: Security Scan
-python .agent/skills/vulnerability-scanner/scripts/security_scan.py .
+python .github/skills/vulnerability-scanner/scripts/security_scan.py .
 
 # P1: UX Audit
-python .agent/skills/frontend-design/scripts/ux_audit.py .
+python .github/skills/frontend-design/scripts/ux_audit.py .
 
 # P3: Lighthouse (requires running server)
-python .agent/skills/performance-profiling/scripts/lighthouse_audit.py http://localhost:3000
+python .github/skills/performance-profiling/scripts/lighthouse_audit.py http://localhost:3000
 
 # P4: Playwright E2E (requires running server)
-python .agent/skills/webapp-testing/scripts/playwright_runner.py http://localhost:3000 --screenshot
+python .github/skills/webapp-testing/scripts/playwright_runner.py http://localhost:3000 --screenshot
 ```
 
 #### 3. Build Verification
@@ -347,7 +345,7 @@ npm run build
 npm run dev
 
 # Optional: Run Playwright tests if available
-python .agent/skills/webapp-testing/scripts/playwright_runner.py http://localhost:3000 --screenshot
+python .github/skills/webapp-testing/scripts/playwright_runner.py http://localhost:3000 --screenshot
 ```
 
 #### 4. Rule Compliance (Manual Check)

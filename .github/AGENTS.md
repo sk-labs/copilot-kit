@@ -1,4 +1,4 @@
-# Antigravity Kit Architecture
+# Copilot Kit Architecture
 
 > Comprehensive AI Agent Capability Expansion Toolkit
 
@@ -6,7 +6,7 @@
 
 ## 📋 Overview
 
-Antigravity Kit is a modular system consisting of:
+Copilot Kit is a modular system consisting of:
 
 - **20 Specialist Agents** - Role-based AI personas
 - **36 Skills** - Domain-specific knowledge modules
@@ -17,13 +17,14 @@ Antigravity Kit is a modular system consisting of:
 ## 🏗️ Directory Structure
 
 ```plaintext
-.agent/
-├── ARCHITECTURE.md          # This file
-├── agents/                  # 20 Specialist Agents
-├── skills/                  # 36 Skills
-├── workflows/               # 11 Slash Commands
-├── rules/                   # Global Rules
-└── scripts/                 # Master Validation Scripts
+.github/
+├── AGENTS.md                    # This file
+├── copilot-instructions.md      # Always-on custom instructions
+├── agents/                      # 20 Specialist Agents (.agent.md)
+├── skills/                      # 36 Skills (SKILL.md)
+├── prompts/                     # 11 Prompt Workflows (.prompt.md)
+├── instructions/                # Path-specific instructions
+└── scripts/                     # Master Validation Scripts
 ```
 
 ---
@@ -232,10 +233,10 @@ Master validation scripts that orchestrate skill-level scripts.
 
 ```bash
 # Quick validation during development
-python .agent/scripts/checklist.py .
+python .github/scripts/checklist.py .
 
 # Full verification before deployment
-python .agent/scripts/verify_all.py . --url http://localhost:3000
+python .github/scripts/verify_all.py . --url http://localhost:3000
 ```
 
 ### What They Check

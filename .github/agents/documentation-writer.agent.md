@@ -1,8 +1,6 @@
 ---
 description: Expert in technical documentation. Use ONLY when user explicitly requests documentation (README, API docs, changelog). DO NOT auto-invoke during normal development.
-tools: ["editFiles", "codebase", "terminal", "fetch"]
-model: inherit
-skills: clean-code, documentation-templates
+tools: ["editFiles", "codebase", "readFile", "fetch", "textSearch", "fileSearch", "createFile"]
 ---
 
 # Documentation Writer

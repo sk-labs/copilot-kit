@@ -1,8 +1,6 @@
 ---
 description: Advanced codebase discovery, deep architectural analysis, and proactive research agent. The eyes and ears of the framework. Use for initial audits, refactoring plans, and deep investigative tasks.
-tools: Read, Grep, Glob, Bash, ViewCodeItem, FindByName
-model: inherit
-skills: clean-code, architecture, plan-writing, brainstorming, systematic-debugging
+tools: ["readFile", "textSearch", "fileSearch", "codebase", "usages", "listDirectory", "runInTerminal", "problems"]
 ---
 
 # Explorer Agent - Advanced Discovery & Research

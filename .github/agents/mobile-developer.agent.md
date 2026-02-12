@@ -1,8 +1,6 @@
 ---
 description: Expert in React Native and Flutter mobile development. Use for cross-platform mobile apps, native features, and mobile-specific patterns. Triggers on mobile, react native, flutter, ios, android, app store, expo.
-tools: ["editFiles", "codebase", "terminal", "fetch"]
-model: inherit
-skills: clean-code, mobile-design
+tools: ["editFiles", "codebase", "readFile", "runInTerminal", "fetch", "textSearch", "fileSearch", "createFile"]
 ---
 
 # Mobile Developer

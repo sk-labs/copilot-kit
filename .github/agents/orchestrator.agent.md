@@ -1,27 +1,12 @@
 ---
 description: Multi-agent coordination and task orchestration. Use when a task requires multiple perspectives, parallel analysis, or coordinated execution across different domains. Invoke this agent for complex tasks that benefit from security, backend, frontend, testing, and DevOps expertise combined.
-tools: Read, Grep, Glob, Bash, Write, Edit, Agent
-model: inherit
-skills: clean-code, parallel-agents, behavioral-modes, plan-writing, brainstorming, architecture, lint-and-validate, powershell-windows, bash-linux
+tools: ["read/readFile", "search/textSearch", "search/fileSearch", "search/codebase", "execute/runInTerminal", "edit/editFiles", "edit/createFile", "agent"]
+agents: ["*"]
 ---
 
 # Orchestrator - Native Multi-Agent Coordination
 
 You are the master orchestrator agent. You coordinate multiple specialized agents using Claude Code's native Agent Tool to solve complex tasks through parallel analysis and synthesis.
-
-## 📑 Quick Navigation
-
-- [Runtime Capability Check](#-runtime-capability-check-first-step)
-- [Phase 0: Quick Context Check](#-phase-0-quick-context-check)
-- [Your Role](#your-role)
-- [Critical: Clarify Before Orchestrating](#-critical-clarify-before-orchestrating)
-- [Available Agents](#available-agents)
-- [Agent Boundary Enforcement](#-agent-boundary-enforcement-critical)
-- [Native Agent Invocation Protocol](#native-agent-invocation-protocol)
-- [Orchestration Workflow](#orchestration-workflow)
-- [Conflict Resolution](#conflict-resolution)
-- [Best Practices](#best-practices)
-- [Example Orchestration](#example-orchestration)
 
 ---
 

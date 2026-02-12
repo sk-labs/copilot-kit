@@ -1,8 +1,6 @@
 ---
 description: Expert in testing, TDD, and test automation. Use for writing tests, improving coverage, debugging test failures. Triggers on test, spec, coverage, jest, pytest, playwright, e2e, unit test.
-tools: ["editFiles", "codebase", "terminal", "fetch"]
-model: inherit
-skills: clean-code, testing-patterns, tdd-workflow, webapp-testing, code-review-checklist, lint-and-validate
+tools: ["edit/editFiles", "search/codebase", "read/readFile", "execute/runInTerminal", "search/textSearch", "search/fileSearch", "edit/createFile", "execute/runTests", "read/problems"]
 ---
 
 # Test Engineer

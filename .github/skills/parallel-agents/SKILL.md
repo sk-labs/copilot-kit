@@ -1,16 +1,15 @@
 ---
 name: parallel-agents
 description: Multi-agent orchestration patterns. Use when multiple independent tasks can run with different domain expertise or when comprehensive analysis requires multiple perspectives.
-allowed-tools: Read, Glob, Grep
 ---
 
 # Native Parallel Agents
 
-> Orchestration through Antigravity's built-in Agent Tool
+> Orchestration through Copilot Kit's built-in Agent Tool
 
 ## Overview
 
-This skill enables coordinating multiple specialized agents through Antigravity's native agent system. Unlike external scripts, this approach keeps all orchestration within Antigravity's control.
+This skill enables coordinating multiple specialized agents through Copilot Kit's native agent system. Unlike external scripts, this approach keeps all orchestration within Copilot's control.
 
 ## When to Use Orchestration
 
@@ -113,7 +112,7 @@ Agents: security-auditor → penetration-tester → synthesis
 
 ---
 
-## Antigravity Built-in Agents
+## Built-in Agents
 
 These work alongside custom agents:
 

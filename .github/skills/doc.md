@@ -1,14 +1,14 @@
-# Antigravity Skills
+# Copilot Kit Skills
 
-> **Guide to creating and using Skills in the Antigravity Kit**
+> **Guide to creating and using Skills in the Copilot Kit**
 
 ---
 
 ## 📋 Overview
 
-While Antigravity's base models (like Gemini) are powerful generalists, they don't know your specific project context or your team's standards. Loading every rule or tool into the agent's context window leads to "tool bloat," higher costs, latency, and confusion.
+While Base AI models are powerful generalists, they don't know your specific project context or your team's standards. Loading every rule or tool into the agent's context window leads to "tool bloat," higher costs, latency, and confusion.
 
-**Antigravity Skills** solve this through **Progressive Disclosure**. A Skill is a package of specialized knowledge that remains dormant until needed. This information is only loaded into the agent's context when your specific request matches the skill's description.
+**Agent Skills** solve this through **Progressive Disclosure**. A Skill is a package of specialized knowledge that remains dormant until needed. This information is only loaded into the agent's context when your specific request matches the skill's description.
 
 ---
 
@@ -18,7 +18,7 @@ Skills are folder-based packages. You can define these scopes based on your need
 
 | Scope         | Path                              | Description                          |
 | ------------- | --------------------------------- | ------------------------------------ |
-| **Workspace** | `<workspace-root>/.agent/skills/` | Available only in a specific project |
+| **Workspace** | `<workspace-root>/.github/skills/` | Available only in a specific project |
 
 ### Skill Directory Structure
 
@@ -39,7 +39,7 @@ This is an instruction-only skill; you only need to create the `SKILL.md` file.
 ### Step 1: Create the directory
 
 ```bash
-mkdir -p .agent/skills/code-review
+mkdir -p .github/skills/code-review
 ```
 
 ### Step 2: Create SKILL.md
@@ -119,12 +119,12 @@ This skill uses a reference file in the `resources/` (or `references/`) director
 ### Step 1: Create the directory
 
 ```bash
-mkdir -p .agent/skills/license-header-adder/resources
+mkdir -p .github/skills/license-header-adder/resources
 ```
 
 ### Step 2: Create the template file
 
-**`.agent/skills/license-header-adder/resources/HEADER.txt`**:
+**`.github/skills/license-header-adder/resources/HEADER.txt`**:
 
 ```
 /*
@@ -136,7 +136,7 @@ mkdir -p .agent/skills/license-header-adder/resources
 
 ### Step 3: Create SKILL.md
 
-**`.agent/skills/license-header-adder/SKILL.md`**:
+**`.github/skills/license-header-adder/SKILL.md`**:
 
 ```markdown
 ---

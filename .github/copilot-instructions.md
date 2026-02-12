@@ -1,8 +1,8 @@
 ---
-trigger: always_on
+applyTo: "**"
 ---
 
-# GEMINI.md - Antigravity Kit
+# Copilot Kit - Custom Instructions
 
 > This file defines how the AI behaves in this workspace.
 
@@ -14,10 +14,10 @@ trigger: always_on
 
 ### 1. Modular Skill Loading Protocol
 
-Agent activated → Check frontmatter "skills:" → Read SKILL.md (INDEX) → Read specific sections.
+Agent activated → Read agent file → Check available skills → Read SKILL.md (INDEX) → Read specific sections.
 
 - **Selective Reading:** DO NOT read ALL files in a skill folder. Read `SKILL.md` first, then only read sections matching the user's request.
-- **Rule Priority:** P0 (GEMINI.md) > P1 (Agent .md) > P2 (SKILL.md). All rules are binding.
+- **Rule Priority:** P0 (copilot-instructions.md) > P1 (Agent .agent.md) > P2 (SKILL.md). All rules are binding.
 
 ### 2. Enforcement Protocol
 
@@ -46,7 +46,7 @@ Agent activated → Check frontmatter "skills:" → Read SKILL.md (INDEX) → Re
 
 **ALWAYS ACTIVE: Before responding to ANY request, automatically analyze and select the best agent(s).**
 
-> 🔴 **MANDATORY:** You MUST follow the protocol defined in `@[skills/intelligent-routing]`.
+> 🔴 **MANDATORY:** You MUST follow the protocol defined in the `intelligent-routing` skill.
 
 ### Auto-Selection Protocol
 
@@ -60,7 +60,7 @@ Agent activated → Check frontmatter "skills:" → Read SKILL.md (INDEX) → Re
 When auto-applying an agent, inform the user:
 
 ```markdown
-🤖 **Applying knowledge of `@[agent-name]`...**
+🤖 **Applying knowledge of `@{agent-name}`...**
 
 [Continue with specialized response]
 ```
@@ -78,9 +78,9 @@ When auto-applying an agent, inform the user:
 | Step | Check | If Unchecked |
 |------|-------|--------------|
 | 1 | Did I identify the correct agent for this domain? | → STOP. Analyze request domain first. |
-| 2 | Did I READ the agent's `.md` file (or recall its rules)? | → STOP. Open `.agent/agents/{agent}.md` |
-| 3 | Did I announce `🤖 Applying knowledge of @[agent]...`? | → STOP. Add announcement before response. |
-| 4 | Did I load required skills from agent's frontmatter? | → STOP. Check `skills:` field and read them. |
+| 2 | Did I READ the agent's `.agent.md` file (or recall its rules)? | → STOP. Open `.github/agents/{agent}.agent.md` |
+| 3 | Did I announce `🤖 Applying knowledge of @{agent}...`? | → STOP. Add announcement before response. |
+| 4 | Did I load relevant skills for this domain? | → STOP. Check `.github/skills/` and read relevant SKILL.md files. |
 
 **Failure Conditions:**
 
@@ -105,7 +105,7 @@ When user's prompt is NOT in English:
 
 ### 🧹 Clean Code (Global Mandatory)
 
-**ALL code MUST follow `@[skills/clean-code]` rules. No exceptions.**
+**ALL code MUST follow `clean-code` skill rules. No exceptions.**
 
 - **Code**: Concise, direct, no over-engineering. Self-documenting.
 - **Testing**: Mandatory. Pyramid (Unit > Int > E2E) + AAA Pattern.
@@ -116,19 +116,19 @@ When user's prompt is NOT in English:
 
 **Before modifying ANY file:**
 
-1. Check `CODEBASE.md` → File Dependencies
+1. Check `AGENTS.md` → File Dependencies
 2. Identify dependent files
 3. Update ALL affected files together
 
 ### 🗺️ System Map Read
 
-> 🔴 **MANDATORY:** Read `ARCHITECTURE.md` at session start to understand Agents, Skills, and Scripts.
+> 🔴 **MANDATORY:** Read `AGENTS.md` at session start to understand Agents, Skills, and Scripts.
 
 **Path Awareness:**
 
-- Agents: `.agent/` (Project)
-- Skills: `.agent/skills/` (Project)
-- Runtime Scripts: `.agent/skills/<skill>/scripts/`
+- Agents: `.github/agents/` (Project)
+- Skills: `.github/skills/` (Project)
+- Runtime Scripts: `.github/skills/<skill>/scripts/`
 
 ### 🧠 Read → Understand → Apply
 
@@ -178,7 +178,7 @@ When user's prompt is NOT in English:
 1. **Never Assume:** If even 1% is unclear, ASK.
 2. **Handle Spec-heavy Requests:** When user gives a list (Answers 1, 2, 3...), do NOT skip the gate. Instead, ask about **Trade-offs** or **Edge Cases** (e.g., "LocalStorage confirmed, but should we handle data clearing or versioning?") before starting.
 3. **Wait:** Do NOT invoke subagents or write code until the user clears the Gate.
-4. **Reference:** Full protocol in `@[skills/brainstorming]`.
+4. **Reference:** Full protocol in the `brainstorming` skill.
 
 ### 🏁 Final Checklist Protocol
 
@@ -186,8 +186,8 @@ When user's prompt is NOT in English:
 
 | Task Stage       | Command                                            | Purpose                        |
 | ---------------- | -------------------------------------------------- | ------------------------------ |
-| **Manual Audit** | `python .agent/scripts/checklist.py .`             | Priority-based project audit   |
-| **Pre-Deploy**   | `python .agent/scripts/checklist.py . --url <URL>` | Full Suite + Performance + E2E |
+| **Manual Audit** | `python .github/scripts/checklist.py .`             | Priority-based project audit   |
+| **Pre-Deploy**   | `python .github/scripts/checklist.py . --url <URL>` | Full Suite + Performance + E2E |
 
 **Priority Execution Order:**
 
@@ -215,9 +215,9 @@ When user's prompt is NOT in English:
 | `lighthouse_audit.py`      | performance-profiling | Before deploy       |
 | `playwright_runner.py`     | webapp-testing        | Before deploy       |
 
-> 🔴 **Agents & Skills can invoke ANY script** via `python .agent/skills/<skill>/scripts/<script>.py`
+> 🔴 **Agents & Skills can invoke ANY script** via `python .github/skills/<skill>/scripts/<script>.py`
 
-### 🎭 Gemini Mode Mapping
+### 🎭 Agent Mode Mapping
 
 | Mode     | Agent             | Behavior                                     |
 | -------- | ----------------- | -------------------------------------------- |
@@ -242,8 +242,8 @@ When user's prompt is NOT in English:
 
 | Task         | Read                            |
 | ------------ | ------------------------------- |
-| Web UI/UX    | `.agent/frontend-specialist.md` |
-| Mobile UI/UX | `.agent/mobile-developer.md`    |
+| Web UI/UX    | `.github/agents/frontend-specialist.agent.md` |
+| Mobile UI/UX | `.github/agents/mobile-developer.agent.md`    |
 
 **These agents contain:**
 
@@ -265,7 +265,7 @@ When user's prompt is NOT in English:
 
 ### Key Scripts
 
-- **Verify**: `.agent/scripts/verify_all.py`, `.agent/scripts/checklist.py`
+- **Verify**: `.github/scripts/verify_all.py`, `.github/scripts/checklist.py`
 - **Scanners**: `security_scan.py`, `dependency_analyzer.py`
 - **Audits**: `ux_audit.py`, `mobile_audit.py`, `lighthouse_audit.py`, `seo_checker.py`
 - **Test**: `playwright_runner.py`, `test_runner.py`
