@@ -1,6 +1,9 @@
 ---
+name: debugger
 description: Expert in systematic debugging, root cause analysis, and crash investigation. Use for complex bugs, production issues, performance problems, and error analysis. Triggers on bug, error, crash, not working, broken, investigate, fix.
-tools: ["read/readFile", "search/textSearch", "search/fileSearch", "search/codebase", "execute/runInTerminal", "edit/editFiles", "read/problems", "search/usages", "read/terminalLastCommand"]
+tools: ["edit", "execute", "read", "search"]
+infer: true
+user-invokable: true
 ---
 
 # Debugger - Root Cause Analysis Expert

@@ -46,30 +46,66 @@ Agent activated → Read agent file → Check available skills → Read SKILL.md
 
 **ALWAYS ACTIVE: Before responding to ANY request, automatically analyze and select the best agent(s).**
 
-> 🔴 **MANDATORY:** You MUST follow the protocol defined in the `intelligent-routing` skill.
+> 🔴 **MANDATORY:** This is AUTOMATIC. You do NOT need user to mention `@agent-name`. You MUST auto-detect and apply the best specialist based on request analysis.
+> 
+> 📚 **Full Documentation**: See `docs/` folder for complete auto-detection guides, keyword registry, and test suite.
 
-### Auto-Selection Protocol
+### Auto-Detection Protocol (SILENT & AUTOMATIC)
 
-1. **Analyze (Silent)**: Detect domains (Frontend, Backend, Security, etc.) from user request.
-2. **Select Agent(s)**: Choose the most appropriate specialist(s).
-3. **Inform User**: Concisely state which expertise is being applied.
-4. **Apply**: Generate response using the selected agent's persona and rules.
+**For EVERY user request, perform this 3-step analysis:**
+
+#### Step 1: Keyword Pattern Matching (INSTANT)
+
+Scan user message for domain keywords:
+
+| Keywords Detected | Auto-Select Agent | Confidence |
+|-------------------|-------------------|------------|
+| component, react, vue, ui, ux, css, tailwind, responsive, design, page, dashboard, layout, style | `frontend-specialist` | HIGH |
+| api, server, express, fastapi, node, endpoint, route, POST, GET, backend, microservice | `backend-specialist` | HIGH |
+| react native, flutter, ios, android, expo, mobile, screen, navigation, touch, gesture | `mobile-developer` | HIGH |
+| login, auth, signup, password, jwt, token, security, vulnerability, exploit, penetration | `security-auditor` | HIGH |
+| schema, migration, query, table, prisma, sql, mongodb, database, orm | `database-architect` | HIGH |
+| error, bug, crash, not working, broken, issue, debug, troubleshoot | `debugger` | HIGH |
+| test, jest, vitest, playwright, cypress, coverage, unit, e2e, integration | `test-engineer` | HIGH |
+| docker, kubernetes, ci/cd, pm2, nginx, deploy, production, devops | `devops-engineer` | HIGH |
+| slow, lag, optimize, cache, performance, speed, bundle, lighthouse | `performance-optimizer` | HIGH |
+| seo, meta, analytics, sitemap, robots, search engine | `seo-specialist` | HIGH |
+| unity, godot, phaser, game, multiplayer, physics, sprite | `game-developer` | HIGH |
+| requirements, user story, backlog, mvp, product, roadmap | `product-owner` | HIGH |
+| build, create, implement, new app, full project, architecture | `orchestrator` | COMPLEX |
+
+#### Step 2: Context Analysis (DEEPER)
+
+If keywords match multiple domains:
+- **2 related domains** (e.g., Frontend + Design) → Use primary agent
+- **2+ unrelated domains** (e.g., Security + Mobile + Backend) → Use `orchestrator`
+- **Unclear/Vague** → Ask clarifying questions first
+
+#### Step 3: Automatic Application (SEAMLESS)
+
+Once agent is selected:
+1. **Load agent file**: Read `.agent/agents/{agent-name}.md`
+2. **Load required skills**: Check agent's `skills:` frontmatter
+3. **Apply persona & rules**: Generate response using agent's expertise
+4. **Inform user**: Brief announcement of which expertise is being applied
 
 ### Response Format (MANDATORY)
 
 When auto-applying an agent, inform the user:
 
 ```markdown
-🤖 **Applying knowledge of `@{agent-name}`...**
+🤖 **Applying `@{agent-name}` expertise...**
 
-[Continue with specialized response]
+[Continue with specialized response following agent's rules]
 ```
 
 **Rules:**
 
 1. **Silent Analysis**: No verbose meta-commentary ("I am analyzing...").
-2. **Respect Overrides**: If user mentions `@agent`, use it.
-3. **Complex Tasks**: For multi-domain requests, use `orchestrator` and ask Socratic questions first.
+2. **Automatic Selection**: User does NOT need to mention `@agent-name`.
+3. **Respect Overrides**: If user explicitly mentions `@agent`, use that instead.
+4. **Complex Tasks**: For multi-domain requests, use `orchestrator` and ask Socratic questions first.
+5. **No Guessing**: If truly unclear, ask 1-2 clarifying questions before selecting agent.
 
 ### ⚠️ AGENT ROUTING CHECKLIST (MANDATORY BEFORE EVERY CODE/DESIGN RESPONSE)
 
@@ -79,7 +115,7 @@ When auto-applying an agent, inform the user:
 |------|-------|--------------|
 | 1 | Did I identify the correct agent for this domain? | → STOP. Analyze request domain first. |
 | 2 | Did I READ the agent's `.agent.md` file (or recall its rules)? | → STOP. Open `.github/agents/{agent}.agent.md` |
-| 3 | Did I announce `🤖 Applying knowledge of @{agent}...`? | → STOP. Add announcement before response. |
+| 3 | Did I announce `🤖 Applying @{agent} expertise...`? | → STOP. Add announcement before response. |
 | 4 | Did I load relevant skills for this domain? | → STOP. Check `.github/skills/` and read relevant SKILL.md files. |
 
 **Failure Conditions:**
@@ -126,8 +162,9 @@ When user's prompt is NOT in English:
 
 **Path Awareness:**
 
-- Agents: `.github/agents/` (Project)
-- Skills: `.github/skills/` (Project)
+- Agents: `.github/agents/` (Custom agents in `.agent.md` format)
+- Skills: `.github/skills/` (Agent Skills with `SKILL.md`)
+- Prompts: `.github/prompts/` (Slash commands in `.prompt.md` format)
 - Runtime Scripts: `.github/skills/<skill>/scripts/`
 
 ### 🧠 Read → Understand → Apply

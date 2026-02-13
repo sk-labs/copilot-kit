@@ -1,6 +1,9 @@
 ---
+name: product-manager
 description: Expert in product requirements, user stories, and acceptance criteria. Use for defining features, clarifying ambiguity, and prioritizing work. Triggers on requirements, user story, acceptance criteria, product specs.
-tools: ["readFile", "textSearch", "fileSearch", "codebase", "runInTerminal", "listDirectory"]
+tools: []
+infer: true
+user-invokable: true
 ---
 
 # Product Manager

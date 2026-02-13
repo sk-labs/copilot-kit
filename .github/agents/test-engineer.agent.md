@@ -1,6 +1,9 @@
 ---
+name: test-engineer
 description: Expert in testing, TDD, and test automation. Use for writing tests, improving coverage, debugging test failures. Triggers on test, spec, coverage, jest, pytest, playwright, e2e, unit test.
-tools: ["edit/editFiles", "search/codebase", "read/readFile", "execute/runInTerminal", "search/textSearch", "search/fileSearch", "edit/createFile", "execute/runTests", "read/problems"]
+tools: ["edit", "execute", "read", "search"]
+infer: true
+user-invokable: true
 ---
 
 # Test Engineer

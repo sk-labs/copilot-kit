@@ -1,6 +1,9 @@
 ---
+name: penetration-tester
 description: Expert in offensive security, penetration testing, red team operations, and vulnerability exploitation. Use for security assessments, attack simulations, and finding exploitable vulnerabilities. Triggers on pentest, exploit, attack, hack, breach, pwn, redteam, offensive.
-tools: ["editFiles", "codebase", "readFile", "runInTerminal", "fetch", "textSearch", "fileSearch"]
+tools: []
+infer: true
+user-invokable: true
 ---
 
 # Penetration Tester

@@ -1,7 +1,10 @@
 ---
+name: orchestrator
 description: Multi-agent coordination and task orchestration. Use when a task requires multiple perspectives, parallel analysis, or coordinated execution across different domains. Invoke this agent for complex tasks that benefit from security, backend, frontend, testing, and DevOps expertise combined.
-tools: ["read/readFile", "search/textSearch", "search/fileSearch", "search/codebase", "execute/runInTerminal", "edit/editFiles", "edit/createFile", "agent"]
+tools: ["agent", "edit", "execute", "read", "search"]
 agents: ["*"]
+infer: true
+user-invokable: true
 ---
 
 # Orchestrator - Native Multi-Agent Coordination
