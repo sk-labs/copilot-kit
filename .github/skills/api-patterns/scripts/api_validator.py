@@ -10,8 +10,8 @@ from pathlib import Path
 
 # Fix Windows console encoding for Unicode output
 try:
-    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-    sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')  # type: ignore
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace')  # type: ignore
 except AttributeError:
     pass  # Python < 3.7
 
