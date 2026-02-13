@@ -71,14 +71,9 @@ Expected: 🤖 Applying @frontend-specialist expertise...
 docs/
 ├── AGENT_REGISTRY.md          # Keyword mappings for auto-detection
 ├── AUTO_DETECTION_GUIDE.md    # Complete user guide
-├── AUTO_DETECTION_FLOW.md     # Visual flow diagrams
-├── TESTING_AUTO_DETECTION.md  # Test suite (18 cases)
-├── AUTO_DETECTION_SUMMARY.md  # High-level overview
-├── QUICK_REFERENCE.md         # Print-friendly cheat sheet
-├── AUTO_DETECTION_CHECKLIST.md # Setup verification
 ├── MIGRATION_FROM_ANTIGRAVITY.md # Migration guide
-├── AUTO_DETECTION_IMPLEMENTATION.md # Implementation details
-└── AUTO_DETECTION_INDEX.md    # Documentation navigation
+├── QUICK_REFERENCE.md         # Print-friendly cheat sheet
+└── README.md                  # Documentation index
 ```
 
 ## Usage
@@ -197,17 +192,17 @@ This shows:
 
 ## Credits
 
-Built on [@vudovn](https://github.com/vudovn)'s excellent [Antigravity Kit](https://github.com/vudovn/antigravity-kit), originally designed for Google Gemini AI. This project adapts and extends that work for GitHub Copilot in VS Code.
+Built on [@vudovn](https://github.com/vudovn)'s excellent [Antigravity Kit](https://github.com/vudovn/antigravity-kit), originally designed for Google Antigravity IDE. This project adapts and extends that work for GitHub Copilot in VS Code.
 
 ### Key Differences from Antigravity Kit
 
-| Feature | Antigravity Kit (Kiro IDE) | Copilot Kit (GitHub Copilot) |
-|---------|----------------------------|-------------------------------|
-| **IDE** | Kiro IDE | VS Code with GitHub Copilot |
-| **Instructions File** | `.kiro/instructions.md` | `.github/copilot-instructions.md` |
-| **Agent Location** | `.kiro/agents/` | `.github/agents/` (`.agent.md` format) |
-| **Skills Location** | `.kiro/skills/` | `.github/skills/` (Agent Skills standard) |
-| **Prompts** | N/A | `.github/prompts/` (`.prompt.md` format) |
+| Feature | Antigravity Kit (Google Antigravity) | Copilot Kit (GitHub Copilot) |
+|---------|--------------------------------------|-------------------------------|
+| **IDE** | Google Antigravity IDE | VS Code with GitHub Copilot |
+| **Instructions File** | `.agent/instructions.md` | `.github/copilot-instructions.md` |
+| **Agent Location** | `.agent/agents/` | `.github/agents/` (`.agent.md` format) |
+| **Skills Location** | `.agent/skills/` | `.github/skills/` (Agent Skills standard) |
+| **Prompts** | `.agent/workflows/` | `.github/prompts/` (`.prompt.md` format) |
 | **Auto-Detection** | ✅ Yes | ✅ Yes (Enhanced) |
 | **Keyword Registry** | In agent frontmatter | Frontmatter + `AGENT_REGISTRY.md` |
 | **Visual Guides** | Basic | Enhanced with flow diagrams |

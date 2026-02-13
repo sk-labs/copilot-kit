@@ -215,17 +215,17 @@ System: Uses debugger (respects explicit mention)
 
 ## Comparison with Antigravity Kit
 
-| Feature | Antigravity Kit (.kiro) | Copilot Kit (.github) |
-|---------|-------------------------|------------------------|
+| Feature | Antigravity Kit (.agent) | Copilot Kit (.github) |
+|---------|--------------------------|------------------------|
 | **Auto-Detection** | ✅ Yes | ✅ Yes |
 | **Keyword Mapping** | In agent frontmatter | In agent frontmatter + AGENT_REGISTRY.md |
-| **Instructions File** | `.kiro/instructions.md` | `.github/copilot-instructions.md` |
-| **Agent Location** | `.kiro/agents/` | `.github/agents/` (`.agent.md` format) |
-| **Skills Location** | `.kiro/skills/` | `.github/skills/` (Agent Skills standard) |
+| **Instructions File** | `.agent/instructions.md` | `.github/copilot-instructions.md` |
+| **Agent Location** | `.agent/agents/` | `.github/agents/` (`.agent.md` format) |
+| **Skills Location** | `.agent/skills/` | `.github/skills/` (Agent Skills standard) |
 | **Explicit Override** | ✅ Yes | ✅ Yes |
 | **Multi-Agent Coordination** | ✅ Yes | ✅ Yes |
 
-**Key Difference**: Copilot Kit uses `.github/` for all GitHub Copilot components (instructions, agents, skills, prompts) following the official GitHub Copilot standard, while Antigravity Kit uses `.kiro/` for everything (Kiro IDE standard).
+**Key Difference**: Copilot Kit uses `.github/` for all GitHub Copilot components (instructions, agents, skills, prompts) following the official GitHub Copilot standard, while Antigravity Kit uses `.agent/` for everything (Google Antigravity IDE standard).
 
 ---
 

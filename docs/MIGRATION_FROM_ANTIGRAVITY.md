@@ -12,7 +12,7 @@ Copilot Kit is inspired by and adapted from [Antigravity Kit](https://github.com
 
 | Aspect | Antigravity Kit | Copilot Kit |
 |--------|-----------------|-------------|
-| **IDE** | Kiro IDE | VS Code |
+| **IDE** | Google Antigravity IDE | VS Code |
 | **AI Provider** | Google Gemini | GitHub Copilot |
 | **Extension** | Built-in | GitHub Copilot extension |
 
@@ -20,11 +20,11 @@ Copilot Kit is inspired by and adapted from [Antigravity Kit](https://github.com
 
 | Component | Antigravity Kit | Copilot Kit |
 |-----------|-----------------|-------------|
-| **Instructions** | `.kiro/instructions.md` | `.github/copilot-instructions.md` |
-| **Agents** | `.kiro/agents/*.md` | `.github/agents/*.agent.md` |
-| **Skills** | `.kiro/skills/*/SKILL.md` | `.github/skills/*/SKILL.md` |
-| **Scripts** | `.kiro/scripts/*.py` | `.github/scripts/*.py` |
-| **Prompts** | N/A | `.github/prompts/*.prompt.md` |
+| **Instructions** | `.agent/instructions.md` | `.github/copilot-instructions.md` |
+| **Agents** | `.agent/agents/*.md` | `.github/agents/*.agent.md` |
+| **Skills** | `.agent/skills/*/SKILL.md` | `.github/skills/*/SKILL.md` |
+| **Scripts** | `.agent/scripts/*.py` | `.github/scripts/*.py` |
+| **Prompts** | `.agent/workflows/*.md` | `.github/prompts/*.prompt.md` |
 
 ### Auto-Detection
 
@@ -43,7 +43,7 @@ Copilot Kit is inspired by and adapted from [Antigravity Kit](https://github.com
 
 **Antigravity Kit Structure**:
 ```
-.kiro/
+.agent/
 ├── instructions.md
 ├── agents/
 ├── skills/
@@ -76,7 +76,7 @@ copilot-kit init
 
 ### Step 3: Understand Agent Invocation
 
-**Antigravity Kit (Kiro IDE)**:
+**Antigravity Kit (Google Antigravity IDE)**:
 ```
 # Auto-detection (no mention needed)
 "Create a button component"
@@ -176,10 +176,10 @@ Copilot Kit: Uses orchestrator ✅
 
 ### Platform-Specific Features
 
-**Antigravity Kit (Kiro IDE)**:
-- Integrated with Kiro IDE features
-- Kiro-specific tools and commands
-- Kiro UI integration
+**Antigravity Kit (Google Antigravity IDE)**:
+- Integrated with Google Antigravity IDE features
+- Antigravity-specific tools and commands
+- Antigravity UI integration
 
 **Copilot Kit (GitHub Copilot)**:
 - VS Code integration
@@ -191,7 +191,7 @@ Copilot Kit: Uses orchestrator ✅
 
 ### Instructions File
 
-**Antigravity**: `.kiro/instructions.md`
+**Antigravity**: `.agent/instructions.md`
 ```markdown
 ## INTELLIGENT AGENT ROUTING
 
@@ -209,7 +209,7 @@ Auto-detect and select best agent...
 
 ### Agent Files
 
-**Antigravity**: `.kiro/agents/frontend-specialist.md`
+**Antigravity**: `.agent/agents/frontend-specialist.md`
 ```yaml
 ---
 name: frontend-specialist
@@ -229,7 +229,7 @@ description: Triggers on: component, react, ui...
 
 ### Skills
 
-**Antigravity**: `.kiro/skills/frontend-design/SKILL.md`
+**Antigravity**: `.agent/skills/frontend-design/SKILL.md`
 ```yaml
 ---
 name: frontend-design
@@ -251,10 +251,10 @@ description: UI/UX design patterns
 
 ### Scenario 1: Simple Frontend Task
 
-**Antigravity Kit (Kiro IDE)**:
+**Antigravity Kit (Google Antigravity IDE)**:
 ```
 You: "Create a responsive card component"
-Kiro: 🤖 Applying @frontend-specialist...
+Antigravity: 🤖 Applying @frontend-specialist...
 [Response follows]
 ```
 
@@ -272,7 +272,7 @@ Copilot: 🤖 Applying @frontend-specialist expertise...
 **Antigravity Kit**:
 ```
 You: "Implement JWT authentication"
-Kiro: 🤖 Applying @security-auditor + @backend-specialist...
+Antigravity: 🤖 Applying @security-auditor + @backend-specialist...
 [Response follows]
 ```
 
@@ -290,8 +290,8 @@ Copilot: 🤖 Applying @security-auditor + @backend-specialist expertise...
 **Antigravity Kit**:
 ```
 You: "Build a real-time chat app"
-Kiro: 🤖 Applying @orchestrator...
-Kiro: Let me ask a few questions first...
+Antigravity: 🤖 Applying @orchestrator...
+Antigravity: Let me ask a few questions first...
 [Questions follow]
 ```
 
@@ -418,7 +418,7 @@ Copilot: Let me ask a few questions first...
 
 ### Q: Can I use both systems?
 
-**A**: Yes! Use Antigravity Kit in Kiro IDE and Copilot Kit in VS Code. They're compatible in concept.
+**A**: Yes! Use Antigravity Kit in Google Antigravity IDE and Copilot Kit in VS Code. They're compatible in concept.
 
 ### Q: Is auto-detection the same?
 
@@ -449,7 +449,7 @@ Copilot: Let me ask a few questions first...
 ### Antigravity Kit
 - [GitHub Repo](https://github.com/vudovn/antigravity-kit)
 - [Documentation](https://github.com/vudovn/antigravity-kit#readme)
-- [Kiro IDE](https://kiro.ai)
+- [Google Antigravity IDE](https://antigravity.google.com)
 
 ### Copilot Kit
 - [AUTO_DETECTION_GUIDE.md](.github/AUTO_DETECTION_GUIDE.md)
