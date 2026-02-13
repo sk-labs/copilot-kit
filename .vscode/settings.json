@@ -6,7 +6,6 @@
   // Based on: https://code.visualstudio.com/docs/copilot/reference/copilot-settings
   
   // === CRITICAL: Custom Agents Auto-Detection ===
-  // This is the MOST IMPORTANT setting for auto-detection to work!
   "chat.customAgentInSubagent.enabled": true,
   
   // === Custom Agents Configuration ===
@@ -14,8 +13,7 @@
     ".github/agents": true
   },
   "chat.agent.enabled": true,
-  "chat.agent.maxRequests": 25,
-  "github.copilot.chat.agent.autoFix": true,
+  "chat.agent.maxRequests": 500,
   
   // === Agent Skills Configuration ===
   "chat.useAgentSkills": true,
@@ -42,9 +40,6 @@
   // === AGENTS.md Support ===
   "chat.useAgentsMdFile": true,
   
-  // === Agent Behavior ===
-  "chat.detectParticipant.enabled": true,
-  
   // === Terminal Tool Auto-Approval (Security) ===
   "chat.tools.terminal.enableAutoApprove": true,
   "chat.tools.terminal.autoApprove": {
@@ -62,13 +57,10 @@
   "chat.tools.terminal.ignoreDefaultAutoApproveRules": false,
   
   // === MCP (Model Context Protocol) ===
-  "chat.mcp.access": true,
-  "chat.mcp.discovery.enabled": false,
-  "chat.mcp.autoStart": "newAndOutdated",
+  "chat.mcp.access": "all",
   
   // === Code Editing Features ===
   "github.copilot.editor.enableCodeActions": true,
-  "github.copilot.renameSuggestions.triggerAutomatically": true,
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.nextEditSuggestions.fixes": true,
   "editor.inlineSuggest.edits.allowCodeShifting": "always",
@@ -97,7 +89,6 @@
   "github.copilot.chat.setupTests.enabled": true,
   
   // === Debugging ===
-  "github.copilot.chat.startDebugging.enabled": true,
   "github.copilot.chat.copilotDebugCommand.enabled": true,
   
   // === Accessibility ===
@@ -107,18 +98,11 @@
   "accessibility.verbosity.panelChat": true,
   
   // === Experimental Features ===
-  "chat.requestQueuing.enabled": true,
-  "chat.requestQueuing.defaultAction": "queue",
-  "chat.emptyState.history.enabled": false,
   "chat.sendElementsToChat.enabled": true,
   "chat.useNestedAgentsMdFiles": false,
-  "github.copilot.chat.edits.suggestRelatedFilesFromGitHistory": true,
-  "github.copilot.chat.agent.thinkingTool": false,
   "github.copilot.chat.summarizeAgentConversationHistory.enabled": true,
   "github.copilot.chat.virtualTools.threshold": 128,
   
   // === UI Preferences ===
-  "chat.commandCenter.enabled": true,
-  "chat.math.enabled": false,
-  "chat.viewTitle.enabled": true
+  "chat.math.enabled": false
 }

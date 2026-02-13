@@ -138,6 +138,9 @@ async function init(options) {
       console.log(chalk.dim('  2. Test auto-detection: "Create a responsive card component"'));
       console.log(chalk.dim('  3. Docs: https://github.com/sk-labs/copilot-kit\n'));
     }
+    
+    // Ensure process exits cleanly
+    process.exit(0);
   } catch (error) {
     if (spinner) spinner.fail(chalk.red('Installation failed'));
     console.error(chalk.red('\n❌ Error:'), error.message);
@@ -192,6 +195,9 @@ async function update(options) {
     if (!options.quiet) {
       console.log(chalk.dim(`\n📦 Updated ${fileCount} files\n`));
     }
+    
+    // Ensure process exits cleanly
+    process.exit(0);
   } catch (error) {
     if (spinner) spinner.fail(chalk.red('Update failed'));
     console.error(chalk.red('\n❌ Error:'), error.message);
@@ -210,7 +216,7 @@ async function status(options) {
   if (!fs.existsSync(githubPath)) {
     console.log(chalk.red('❌ Not installed'));
     console.log(chalk.dim('   Run "copilot-kit init" to install\n'));
-    return;
+    process.exit(0);
   }
 
   console.log(chalk.green('✓ Installed'), chalk.dim(`at ${githubPath}`));
@@ -284,6 +290,9 @@ async function status(options) {
   }
   
   console.log();
+  
+  // Ensure process exits cleanly
+  process.exit(0);
 }
 
 function downloadRepo(branch = 'main') {

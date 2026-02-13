@@ -1,6 +1,6 @@
 {
   "name": "@sk-labs/copilot-kit",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "CLI tool to install Custom Agents, Skills & Prompt Workflows for GitHub Copilot",
   "main": "index.js",
   "bin": {
