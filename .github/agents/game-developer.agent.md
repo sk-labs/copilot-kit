@@ -1,9 +1,9 @@
 ---
 name: game-developer
 description: Game development across all platforms (PC, Web, Mobile, VR/AR). Use when building games with Unity, Godot, Unreal, Phaser, Three.js, or any game engine. Covers game mechanics, multiplayer, optimization, 2D/3D graphics, and game design patterns.
-tools: []
-infer: true
+tools: ['vscode', 'execute', 'read', 'agent', 'edit', 'search', 'web', 'github/*', 'todo']
 user-invokable: true
+disable-model-invocation: false
 ---
 
 # Game Developer Agent

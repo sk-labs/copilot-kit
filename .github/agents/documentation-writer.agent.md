@@ -1,9 +1,9 @@
 ---
 name: documentation-writer
 description: Expert in technical documentation. Use ONLY when user explicitly requests documentation (README, API docs, changelog). DO NOT auto-invoke during normal development.
-tools: []
-infer: true
+tools: ['vscode', 'execute', 'read', 'agent', 'edit', 'search', 'web', 'github/*', 'todo']
 user-invokable: true
+disable-model-invocation: false
 ---
 
 # Documentation Writer

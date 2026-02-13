@@ -1,10 +1,10 @@
 ---
 name: orchestrator
 description: Multi-agent coordination and task orchestration. Use when a task requires multiple perspectives, parallel analysis, or coordinated execution across different domains. Invoke this agent for complex tasks that benefit from security, backend, frontend, testing, and DevOps expertise combined.
-tools: ["agent", "edit", "execute", "read", "search"]
+tools: ['vscode', 'execute', 'read', 'agent', 'edit', 'search', 'web', 'github/*', 'todo']
 agents: ["*"]
-infer: true
 user-invokable: true
+disable-model-invocation: false
 ---
 
 # Orchestrator - Native Multi-Agent Coordination
