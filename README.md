@@ -15,11 +15,38 @@ npm install -g @sk-labs/copilot-kit
 copilot-kit init
 ```
 
-This installs agents, skills, and prompt files into your `.github/` directory — ready for GitHub Copilot in VS Code.
+This installs:
+- ✅ Agents, skills, and prompt files into `.github/` directory
+- ✅ VS Code settings into `.vscode/settings.json` (with merge option)
+- ✅ Auto-detection enabled automatically
+
+### What Happens During Install
+
+1. **Downloads** the latest Copilot Kit from GitHub
+2. **Installs** `.github/` folder with agents, skills, and prompts
+3. **Configures** `.vscode/settings.json`:
+   - If settings.json doesn't exist → Creates new with Copilot Kit settings
+   - If settings.json exists → Asks you to **Replace**, **Merge**, or **Skip**
+     - **Replace**: Overwrites with Copilot Kit settings
+     - **Merge**: Adds Copilot Kit settings to your existing settings (recommended)
+     - **Skip**: Keeps your existing settings unchanged
+4. **Enables** auto-detection (`chat.customAgentInSubagent.enabled: true`)
 
 ### Prerequisites
 - **VS Code** with [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) extension
 - **Node.js** 16.0 or later
+
+### After Installation
+
+**🔴 CRITICAL**: Reload VS Code for settings to take effect!
+- Press `Ctrl+Shift+P` → Type "Reload Window" → Press Enter
+
+Then test auto-detection:
+```
+Open Copilot Chat (Ctrl+Alt+I)
+Type: "Create a responsive card component"
+Expected: 🤖 Applying @frontend-specialist expertise...
+```
 
 ## What's Included
 
@@ -134,9 +161,9 @@ Skills are loaded progressively by agents based on task context. They follow the
 
 | Command              | Description                                      |
 | -------------------- | ------------------------------------------------ |
-| `copilot-kit init`   | Install `.github/` structure into your project   |
+| `copilot-kit init`   | Install `.github/` + `.vscode/` into your project |
 | `copilot-kit update` | Update to the latest version                     |
-| `copilot-kit status` | Check installation status                        |
+| `copilot-kit status` | Check installation and VS Code configuration     |
 
 ### Options
 
@@ -147,6 +174,20 @@ copilot-kit init --branch dev   # Use specific branch
 copilot-kit init --quiet        # Suppress output (for CI/CD)
 copilot-kit init --dry-run      # Preview actions without executing
 ```
+
+### Status Command
+
+Check if Copilot Kit is properly installed and configured:
+
+```bash
+copilot-kit status
+```
+
+This shows:
+- ✅ Installation status (.github folder)
+- ✅ Agent, skill, and prompt counts
+- ✅ VS Code configuration status
+- ✅ Critical setting verification (`chat.customAgentInSubagent.enabled`)
 
 ## Documentation
 
