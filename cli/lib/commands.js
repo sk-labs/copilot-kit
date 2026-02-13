@@ -77,7 +77,8 @@ async function init(options) {
     const vscodeSettingsEntry = entries.find(e => e.entryName === `${rootFolder}/.vscode/settings.json`);
     
     if (vscodeSettingsEntry) {
-      const newSettings = JSON.parse(vscodeSettingsEntry.getData().toString('utf8'));
+      const newSettingsContent = vscodeSettingsEntry.getData().toString('utf8');
+      const newSettings = parseJsonWithComments(newSettingsContent);
       
       if (fs.existsSync(vscodeSettingsPath)) {
         // .vscode/settings.json already exists
@@ -99,10 +100,19 @@ async function init(options) {
           console.log(chalk.green('✓ Replaced .vscode/settings.json'));
         } else if (choice === 'm') {
           // Merge
-          const existingSettings = JSON.parse(fs.readFileSync(vscodeSettingsPath, 'utf8'));
-          const mergedSettings = mergeSettings(existingSettings, newSettings);
-          fs.writeFileSync(vscodeSettingsPath, JSON.stringify(mergedSettings, null, 2));
-          console.log(chalk.green('✓ Merged Copilot Kit settings into existing settings.json'));
+          try {
+            const existingContent = fs.readFileSync(vscodeSettingsPath, 'utf8');
+            const existingSettings = parseJsonWithComments(existingContent);
+            const mergedSettings = mergeSettings(existingSettings, newSettings);
+            fs.writeFileSync(vscodeSettingsPath, JSON.stringify(mergedSettings, null, 2));
+            console.log(chalk.green('✓ Merged Copilot Kit settings into existing settings.json'));
+          } catch (error) {
+            console.log(chalk.red('✗ Failed to merge settings:'), error.message);
+            console.log(chalk.yellow('  Creating backup and replacing...'));
+            fs.copyFileSync(vscodeSettingsPath, `${vscodeSettingsPath}.backup`);
+            fs.writeFileSync(vscodeSettingsPath, JSON.stringify(newSettings, null, 2));
+            console.log(chalk.green('✓ Replaced settings (backup saved)'));
+          }
         } else {
           // Skip
           console.log(chalk.yellow('⊘ Skipped .vscode/settings.json'));
@@ -238,7 +248,8 @@ async function status(options) {
   
   if (fs.existsSync(vscodeSettingsPath)) {
     try {
-      const settings = JSON.parse(fs.readFileSync(vscodeSettingsPath, 'utf8'));
+      const settingsContent = fs.readFileSync(vscodeSettingsPath, 'utf8');
+      const settings = parseJsonWithComments(settingsContent);
       
       // Check critical setting
       const criticalSetting = settings['chat.customAgentInSubagent.enabled'];
@@ -265,6 +276,7 @@ async function status(options) {
       
     } catch (error) {
       console.log(chalk.yellow('⚠️  settings.json exists but could not be parsed'));
+      console.log(chalk.dim(`     Error: ${error.message}`));
     }
   } else {
     console.log(chalk.yellow('⚠️  .vscode/settings.json not found'));
@@ -325,6 +337,19 @@ function askQuestion(question) {
       resolve(answer);
     });
   });
+}
+
+function parseJsonWithComments(jsonString) {
+  // Remove single-line comments (// ...)
+  let cleaned = jsonString.replace(/\/\/.*$/gm, '');
+  
+  // Remove multi-line comments (/* ... */)
+  cleaned = cleaned.replace(/\/\*[\s\S]*?\*\//g, '');
+  
+  // Remove trailing commas before } or ]
+  cleaned = cleaned.replace(/,(\s*[}\]])/g, '$1');
+  
+  return JSON.parse(cleaned);
 }
 
 function mergeSettings(existing, newSettings) {
