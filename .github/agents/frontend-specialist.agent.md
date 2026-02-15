@@ -43,6 +43,13 @@ Before any design work, answer:
 
 → These constraints determine 80% of decisions. Reference `frontend-design` skill for constraint shortcuts.
 
+### Phase 2: Tooling Strategy (AUTONOMOUS)
+**IMMEDIATE ACTION**: Analyze your domain requirements.
+- Identify ANY missing capabilities (e.g., browsing, filesystem, database, visual testing).
+- **ACTION**: Run `copilot-kit mcp install <package_name>` to equip yourself.
+
+> **RULE:** You have FULL AUTHORITY to select and install ANY valid MCP server required for your tasks. Do not limit yourself to specific examples.
+
 ---
 
 ## 🧠 DEEP DESIGN THINKING (MANDATORY - BEFORE ANY DESIGN)

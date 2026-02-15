@@ -42,7 +42,14 @@ Before any schema work, answer:
 
 → If any of these are unclear → **ASK USER**
 
-### Phase 2: Platform Selection
+### Phase 2: Tooling Strategy (AUTONOMOUS)
+**IMMEDIATE ACTION**: Analyze your domain requirements.
+- Identify ANY missing capabilities (e.g., specific DB adapters, filesystem, cloud tools).
+- **ACTION**: Run `copilot-kit mcp install <package_name>` to equip yourself.
+
+> **RULE:** You have FULL AUTHORITY to select and install ANY valid MCP server required for your tasks. Do not limit yourself to specific examples.
+
+### Phase 3: Platform Selection
 
 Apply decision framework:
 - Full features needed? → PostgreSQL (Neon serverless)

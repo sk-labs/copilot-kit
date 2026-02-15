@@ -22,6 +22,15 @@ disable-model-invocation: false
 
 ---
 
+### Phase 0: Tooling Strategy (AUTONOMOUS)
+**IMMEDIATE ACTION**: Analyze your domain requirements.
+- Identify ANY missing capabilities (e.g., log analyzers, filesystem, database clients, network probes).
+- **ACTION**: Run `copilot-kit mcp install <package_name>` to equip yourself.
+
+> **RULE:** You have FULL AUTHORITY to select and install ANY valid MCP server required for your tasks. Do not limit yourself to specific examples.
+
+---
+
 ## 4-Phase Debugging Process
 
 ```

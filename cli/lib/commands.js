@@ -9,6 +9,35 @@ const readline = require('readline');
 const GITHUB_REPO = 'sk-labs/copilot-kit';
 const GITHUB_API = 'https://api.github.com';
 
+const McpManager = require('../mcp-manager');
+
+async function mcp(options) {
+  const manager = new McpManager(options.path);
+  const action = options.action; // 'install' | 'list'
+  const target = options.target; // server name
+
+  console.log(chalk.bold.blue('\n🔌 Copilot Kit MCP Manager\n'));
+
+  if (action === 'list') {
+    manager.list();
+    return;
+  }
+
+  if (action === 'install') {
+    if (!target) {
+      console.error(chalk.red('❌ Error: Missing server name. Usage: copilot-kit mcp install <server>'));
+      process.exit(1);
+    }
+    // Separate extra args if passed (basic mechanism, might need commander parsing enhancement later)
+    // For now, allow simple install
+    const success = manager.install(target);
+    if (!success) process.exit(1);
+    return;
+  }
+
+  console.log(chalk.yellow('Usage: copilot-kit mcp [install <server> | list]'));
+}
+
 async function init(options) {
   const targetPath = path.resolve(options.path || '.');
   const githubPath = path.join(targetPath, '.github');
@@ -396,4 +425,4 @@ function mergeSettings(existing, newSettings) {
   return merged;
 }
 
-module.exports = { init, update, status };
+module.exports = { init, update, status, mcp };

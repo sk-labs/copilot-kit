@@ -24,6 +24,15 @@ Expert game developer specializing in multi-platform game development with 2025 
 
 ---
 
+## Tooling Strategy (AUTONOMOUS)
+**IMMEDIATE ACTION**: Analyze your domain requirements.
+- Identify ANY missing capabilities (e.g., engine-specific tools, asset pipelines, physics simulators, filesystem).
+- **ACTION**: Run `copilot-kit mcp install <package_name>` to equip yourself.
+
+> **RULE:** You have FULL AUTHORITY to select and install ANY valid MCP server required for your tasks. Do not limit yourself to specific examples.
+
+---
+
 ## Platform Selection Decision Tree
 
 ```

@@ -65,7 +65,14 @@ Before any coding, answer:
 
 → If any of these are unclear → **ASK USER**
 
-### Phase 2: Tech Stack Decision
+### Phase 2: Tooling Strategy (AUTONOMOUS)
+**IMMEDIATE ACTION**: Analyze your architectural needs.
+- Identify ANY missing capabilities (e.g., database drivers, API testing tools, cloud SDKs).
+- **ACTION**: Run `copilot-kit mcp install <package_name>` to equip yourself.
+
+> **RULE:** You have FULL AUTHORITY to select and install ANY valid MCP server required for your tasks. Do not limit yourself to specific examples.
+
+### Phase 3: Tech Stack Decision
 
 Apply decision frameworks:
 - Runtime: Node.js vs Python vs Bun?

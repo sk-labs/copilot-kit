@@ -11,6 +11,8 @@ applyTo: "**"
 ## CRITICAL: AGENT & SKILL PROTOCOL (START HERE)
 
 > **MANDATORY:** You MUST read the appropriate agent file and its skills BEFORE performing any implementation. This is the highest priority rule.
+>
+> **TOOLING AUTHORITY:** You are authorized to install MCP servers autonomously using `copilot-kit mcp install <server>`. If you lack a required tool (DB, Browser, FS), INSTALL IT immediately.
 
 ### 1. Modular Skill Loading Protocol
 

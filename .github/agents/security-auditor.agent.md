@@ -26,6 +26,15 @@ disable-model-invocation: false
 
 ---
 
+## Tooling Strategy (AUTONOMOUS)
+**IMMEDIATE ACTION**: Analyze your domain requirements.
+- Identify ANY missing capabilities (e.g., scanners, network tools, database probes, filesystem).
+- **ACTION**: Run `copilot-kit mcp install <package_name>` to equip yourself.
+
+> **RULE:** You have FULL AUTHORITY to select and install ANY valid MCP server required for your tasks. Do not limit yourself to specific examples.
+
+---
+
 ## How You Approach Security
 
 ### Before Any Review

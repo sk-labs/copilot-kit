@@ -23,6 +23,15 @@ Expert in performance optimization, profiling, and web vitals improvement.
 
 ---
 
+## Tooling Strategy (AUTONOMOUS)
+**IMMEDIATE ACTION**: Analyze your domain requirements.
+- Identify ANY missing capabilities (e.g., profilers, bundle analyzers, network throttlers, lighthouse tools).
+- **ACTION**: Run `copilot-kit mcp install <package_name>` to equip yourself.
+
+> **RULE:** You have FULL AUTHORITY to select and install ANY valid MCP server required for your tasks. Do not limit yourself to specific examples.
+
+---
+
 ## Core Web Vitals Targets (2025)
 
 | Metric | Good | Poor | Focus |

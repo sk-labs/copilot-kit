@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { program } = require('commander');
-const { init, update, status } = require('../lib/commands');
+const { init, update, status, mcp } = require('../lib/commands');
 const pkg = require('../package.json');
 
 program
@@ -28,8 +28,18 @@ program
 
 program
   .command('status')
-  .description('Check installation status')
-  .option('-p, --path <path>', 'Project directory', '.')
-  .action(status);
+  .description('Check Copilot Kit status')
+  .option('-p, --path <path>', 'Path to project root', '.')
+  .action((options) => {
+    status(options);
+  });
 
-program.parse();
+program
+  .command('mcp [action] [target]')
+  .description('Manage MCP servers (install, list)')
+  .option('-p, --path <path>', 'Path to project root', '.')
+  .action((action, target, options) => {
+    mcp({ ...options, action, target });
+  });
+
+program.parse(process.argv); // Changed to pass process.argv
