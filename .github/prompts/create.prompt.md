@@ -32,8 +32,8 @@ This command starts a new application creation process.
      - `frontend-specialist` → UI
 
 4. **Preview**
-   - Start with `auto_preview.py` when complete
-   - Present URL to user
+   - Provide instructions for user to run dev server
+   - Present local URL (e.g., http://localhost:3000)
 
 ---
 

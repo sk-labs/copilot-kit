@@ -86,7 +86,7 @@ If keywords match multiple domains:
 #### Step 3: Automatic Application (SEAMLESS)
 
 Once agent is selected:
-1. **Load agent file**: Read `.agent/agents/{agent-name}.md`
+1. **Load agent file**: Read `.github/agents/{agent-name}.agent.md`
 2. **Load required skills**: Check agent's `skills:` frontmatter
 3. **Apply persona & rules**: Generate response using agent's expertise
 4. **Inform user**: Brief announcement of which expertise is being applied
