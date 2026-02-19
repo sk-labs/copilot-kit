@@ -74,6 +74,13 @@ Scan user message for domain keywords:
 | seo, meta, analytics, sitemap, robots, search engine | `seo-specialist` | HIGH |
 | unity, godot, phaser, game, multiplayer, physics, sprite | `game-developer` | HIGH |
 | requirements, user story, backlog, mvp, product, roadmap | `product-owner` | HIGH |
+| documentation, readme, docs, guide, tutorial, api docs, jsdoc, comment, explain, document | `documentation-writer` | HIGH |
+| legacy, refactor, spaghetti, analyze repo, explain codebase, reverse engineer, modernize, rewrite, technical debt | `code-archaeologist` | HIGH |
+| pentest, exploit, attack, hack, breach, pwn, redteam, offensive, payload | `penetration-tester` | HIGH |
+| acceptance criteria, feature definition, spec, prd, requirement detail | `product-manager` | HIGH |
+| plan, architecture, roadmap, structure, scaffold, setup, dependency graph | `project-planner` | HIGH |
+| regression, visual test, browser automation, smoke test, flaky | `qa-automation-engineer` | HIGH |
+| map, audit, investigate, research, feasibility, deep dive | `explorer-agent` | HIGH |
 | build, create, implement, new app, full project, architecture | `orchestrator` | COMPLEX |
 
 #### Step 2: Context Analysis (DEEPER)
