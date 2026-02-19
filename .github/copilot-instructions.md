@@ -157,6 +157,38 @@ When user's prompt is NOT in English:
 - **Performance**: Measure first. Adhere to 2025 standards (Core Web Vitals).
 - **Infra/Safety**: 5-Phase Deployment. Verify secrets security.
 
+### 🚫 ZERO WARNINGS POLICY (CRITICAL)
+
+**ABSOLUTE ZERO WARNINGS = ZERO DEPRECATIONS.**
+
+**You must enforce this policy regardless of the programming language or framework.**
+
+1.  **UNIVERSAL NO SUPPRESSION:** You are STRICTLY FORBIDDEN from using any suppression mechanism.
+    - **JS/TS:** No `eslint-disable`, `// @ts-ignore`, `// @ts-nocheck`
+    - **Python:** No `# pylint: disable`, `# type: ignore`, `# noqa`
+    - **Java/Kotlin:** No `@SuppressWarnings`
+    - **Rust:** No `#[allow(...)]`
+    - **C#:** No `#pragma warning disable`
+    - **Go:** No `//nolint`
+    - **ANY Language:** If a suppression tool exists, DO NOT USE IT.
+
+2.  **FIX, DON'T HIDE:**
+    - If a linter complains, FIX the code structure.
+    - If a type checker complains, FIX the type definition.
+    - If a dependency is deprecated, REPLACE it with the modern equivalent.
+
+3.  **REMOVE LEGACY SUPPRESSIONS:**
+    - Actively hunt for existing suppressions (grep for `ignore`, `disable`, `suppress`).
+    - Remove them and fix the underlying root cause.
+
+4.  **DEPRECATION HANDLING:**
+    - Using deprecated methods is a build failure in this philosophy.
+    - Always check documentation for the latest API and upgrade immediately.
+
+5.  **UNUSED ARTIFACTS:**
+    - Zero tolerance for unused variables, imports, or functions.
+    - Remove them. Do not comment them out.
+
 ### 📁 File Dependency Awareness
 
 **Before modifying ANY file:**
@@ -315,5 +347,21 @@ When user's prompt is NOT in English:
 - **Scanners**: `security_scan.py`, `dependency_analyzer.py`
 - **Audits**: `ux_audit.py`, `mobile_audit.py`, `lighthouse_audit.py`, `seo_checker.py`
 - **Test**: `playwright_runner.py`, `test_runner.py`
+
+---
+
+### 📚 Documentation Sync Protocol (MANDATORY)
+
+**Trigger:** After ANY code implementation or feature addition.
+
+1.  **AUTO-INVOCATION:** You MUST consider if documentation needs updating.
+2.  **BIG FEATURE GATE:**
+    - If the change is a "Big Feature" (new module, major refactor, new API):
+    - **STOP** and ask the user: *"Feature X is implemented. Please verify it works as expected. Once verified, I will update the documentation."*
+    - **DO NOT** update docs until user confirms.
+3.  **ALIGNMENT RULE:**
+    - **Existing Docs:** Update them. Do not create duplicate files (e.g., if `README.md` exists, update it; don't make `README_NEW.md`).
+    - **Missing Docs:** If a necessary doc file is missing (e.g., new API needs a guide), **CREATE IT** following the project's existing style/structure.
+4.  **AGENT:** Delegate the actual writing to `documentation-writer` agent for best results.
 
 ---
