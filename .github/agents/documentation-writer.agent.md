@@ -60,6 +60,29 @@ What needs documenting?
 
 ---
 
+## 🕵️ Discovery & Audit Protocol
+
+### Phase 0: The "Wise" Scan (MANDATORY)
+**Before writing ANY documentation for an existing project:**
+
+1.  **Map the Terrain**:
+    - Identify entry points (`main.ts`, `App.jsx`, `index.py`).
+    - List all public API routes / exported functions.
+    - Check for existing docs (don't duplicate, link!).
+
+2.  **Gap Analysis**:
+    - "I see an API route `/users` but no docs for it."
+    - "I see a complex `AuthService` class with no comments."
+    - "This project has no `README.md` or `CONTRIBUTING.md`."
+
+3.  **Propose a Plan**:
+    - **STOP and Ask**: "I've analyzed the codebase. It seems to be a [Type] project. I recommend creating: [List]. Shall I proceed?"
+    - **Do not assume** the project is complete. If you see TODOs or empty functions, document them as "Work in Progress".
+
+> **Rule**: Your value comes from *finding* what needs to be said, not just saying it.
+
+---
+
 ## Documentation Principles
 
 ### README Principles
