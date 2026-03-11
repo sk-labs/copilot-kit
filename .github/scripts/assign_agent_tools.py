@@ -21,38 +21,16 @@ import re
 from pathlib import Path
 
 # Tool assignments based on agent roles (CORRECTED)
-AGENT_TOOLS = {
-    'backend-specialist': ['search/codebase', 'edit/editFiles', 'search/fileSearch', 'read/readFile', 'search', 'shell/terminalLastCommand', 'search/usages'],
-    'code-archaeologist': ['search/codebase', 'read/readFile', 'search', 'search/usages', 'web/githubRepo', 'search/fileSearch'],
-    'database-architect': ['search/codebase', 'edit/editFiles', 'search/fileSearch', 'read/readFile', 'search', 'search/usages'],
-    'debugger': ['search/codebase', 'read/readFile', 'search', 'shell/terminalLastCommand', 'search/usages', 'search/fileSearch'],
-    'devops-engineer': ['edit/editFiles', 'search/fileSearch', 'read/readFile', 'shell/terminalLastCommand', 'web/fetch'],
-    'documentation-writer': ['search/codebase', 'edit/editFiles', 'read/readFile', 'search', 'search/usages', 'web/fetch'],
-    'explorer-agent': ['search/codebase', 'search/fileSearch', 'read/listDirectory', 'read/readFile', 'search', 'search/usages'],
-    'frontend-specialist': ['search/codebase', 'edit/editFiles', 'search/fileSearch', 'read/readFile', 'search', 'search/usages'],
-    'game-developer': ['search/codebase', 'edit/editFiles', 'search/fileSearch', 'read/readFile', 'search', 'shell/terminalLastCommand'],
-    'mobile-developer': ['search/codebase', 'edit/editFiles', 'search/fileSearch', 'read/readFile', 'search', 'shell/terminalLastCommand'],
-    'orchestrator': ['agent', 'search/codebase', 'search/fileSearch', 'read/readFile', 'search'],
-    'penetration-tester': ['search/codebase', 'read/readFile', 'search', 'shell/terminalLastCommand', 'web/fetch', 'search/usages'],
-    'performance-optimizer': ['search/codebase', 'edit/editFiles', 'read/readFile', 'search', 'shell/terminalLastCommand', 'search/usages'],
-    'product-manager': ['search/codebase', 'read/readFile', 'search', 'web/githubRepo', 'web/fetch'],
-    'product-owner': ['search/codebase', 'read/readFile', 'search', 'web/githubRepo', 'web/fetch'],
-    'project-planner': ['search/codebase', 'search/fileSearch', 'read/readFile', 'search', 'web/githubRepo'],
-    'qa-automation-engineer': ['search/codebase', 'edit/editFiles', 'search/fileSearch', 'read/readFile', 'search', 'shell/terminalLastCommand'],
-    'security-auditor': ['search/codebase', 'read/readFile', 'search', 'search/usages', 'web/fetch', 'search/fileSearch'],
-    'seo-specialist': ['search/codebase', 'edit/editFiles', 'read/readFile', 'search', 'web/fetch'],
-    'test-engineer': ['search/codebase', 'edit/editFiles', 'search/fileSearch', 'read/readFile', 'search', 'shell/terminalLastCommand', 'search/usages'],
-}
+# VS Code 1.110 tools
+# Apply to all agents
+ALL_TOOLS = ['vscode', 'execute', 'read', 'agent', 'edit', 'search', 'web', 'github/*', 'browser', 'todo']
 
 def update_agent_tools(filepath):
     """Update tools in an agent file"""
     agent_name = filepath.stem.replace('.agent', '')
     
-    if agent_name not in AGENT_TOOLS:
-        print(f"⚠️  No tool mapping for {agent_name}")
-        return False
-    
-    tools = AGENT_TOOLS[agent_name]
+    # Delete these lines since we don't look up by name anymore
+    tools = ALL_TOOLS
     
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
@@ -100,7 +78,7 @@ def main():
     for filepath in sorted(agent_files):
         agent_name = filepath.stem.replace('.agent', '')
         if update_agent_tools(filepath):
-            tools = AGENT_TOOLS.get(agent_name, [])
+            tools = ALL_TOOLS
             print(f"✅ {agent_name}: {len(tools)} tools")
             updated_count += 1
     

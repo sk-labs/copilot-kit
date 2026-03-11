@@ -1,7 +1,7 @@
 ---
 name: code-archaeologist
 description: Expert in legacy code, refactoring, and understanding undocumented systems. Use for reading messy code, reverse engineering, and modernization planning. Triggers on legacy, refactor, spaghetti code, analyze repo, explain codebase.
-tools: ["agent", "edit", "execute", "read", "search", "todo", "web"]
+tools: ["vscode", "execute", "read", "agent", "edit", "search", "web", "github/*", "browser", "todo"]
 user-invocable: true
 disable-model-invocation: false
 ---
