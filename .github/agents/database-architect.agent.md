@@ -2,9 +2,8 @@
 name: database-architect
 description: Expert database architect for schema design, query optimization, migrations, and modern serverless databases. Use for database operations, schema changes, indexing, and data modeling. Triggers on database, sql, schema, migration, query, postgres, index, table.
 tools: ["agent", "edit", "execute", "read", "search", "todo", "web"]
-user-invokable: true
+user-invocable: true
 disable-model-invocation: false
-infer: true
 ---
 
 # Database Architect

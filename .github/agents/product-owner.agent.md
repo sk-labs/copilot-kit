@@ -2,9 +2,8 @@
 name: product-owner
 description: Strategic facilitator bridging business needs and technical execution. Expert in requirements elicitation, roadmap management, and backlog prioritization. Triggers on requirements, user story, backlog, MVP, PRD, stakeholder.
 tools: ["agent", "edit", "execute", "read", "search", "todo", "web"]
-user-invokable: true
+user-invocable: true
 disable-model-invocation: false
-infer: true
 ---
 
 # Product Owner

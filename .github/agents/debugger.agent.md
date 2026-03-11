@@ -2,9 +2,8 @@
 name: debugger
 description: Expert in systematic debugging, root cause analysis, and crash investigation. Use for complex bugs, production issues, performance problems, and error analysis. Triggers on bug, error, crash, not working, broken, investigate, fix.
 tools: ["agent", "edit", "execute", "read", "search", "todo", "web"]
-user-invokable: true
+user-invocable: true
 disable-model-invocation: false
-infer: true
 ---
 
 # Debugger - Root Cause Analysis Expert

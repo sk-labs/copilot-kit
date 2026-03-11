@@ -38,8 +38,8 @@ def fix_agent_file(filepath):
     lines = frontmatter.split('\n')
     new_lines = []
     has_name = False
-    has_infer = False
-    has_user_invokable = False
+    has_user_invocable = False
+    has_disable_model_invocation = False
     tools_fixed = False
     
     for line in lines:
@@ -76,19 +76,30 @@ def fix_agent_file(filepath):
             else:
                 new_lines.append(line)
         elif line.startswith('infer:'):
-            has_infer = True
-            new_lines.append(line)
+            # Skip infer, as it's deprecated
+            tools_fixed = True # Trigger a write to remove it
+            continue
         elif line.startswith('user-invokable:'):
-            has_user_invokable = True
+            # Replace with correct spelling
+            has_user_invocable = True
+            new_lines.append(line.replace('user-invokable', 'user-invocable'))
+            tools_fixed = True # Trigger a write to fix it
+        elif line.startswith('user-invocable:'):
+            has_user_invocable = True
+            new_lines.append(line)
+        elif line.startswith('disable-model-invocation:'):
+            has_disable_model_invocation = True
             new_lines.append(line)
         else:
             new_lines.append(line)
     
     # Add missing properties
-    if not has_infer:
-        new_lines.append('infer: true')
-    if not has_user_invokable:
-        new_lines.append('user-invokable: true')
+    if not has_user_invocable:
+        new_lines.append('user-invocable: true')
+        tools_fixed = True
+    if not has_disable_model_invocation:
+        new_lines.append('disable-model-invocation: false')
+        tools_fixed = True
     
     # Reconstruct file
     new_frontmatter = '\n'.join(new_lines)
@@ -128,8 +139,8 @@ def main():
     print(f"\n✅ Done! Fixed {fixed_count} agent files")
     print(f"\nAll agents now have:")
     print(f"  - name property")
-    print(f"  - infer: true (enables auto-detection)")
-    print(f"  - user-invokable: true (shows in dropdown)")
+    print(f"  - user-invocable: true (shows in dropdown)")
+    print(f"  - disable-model-invocation: false (replaces deprecated infer)")
     print(f"  - Correct tool aliases (read, edit, search, execute, web)")
 
 if __name__ == '__main__':
