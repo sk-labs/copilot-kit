@@ -8,8 +8,8 @@
 
 Copilot Kit is a modular system consisting of:
 
-- **21 Specialist Agents** - Role-based AI personas
-- **37 Skills** - Domain-specific knowledge modules
+- **22 Specialist Agents** - Role-based AI personas
+- **38 Skills** - Domain-specific knowledge modules
 - **11 Workflows** - Slash command procedures
 
 ---
@@ -20,8 +20,8 @@ Copilot Kit is a modular system consisting of:
 .github/
 ├── AGENTS.md                    # This file
 ├── copilot-instructions.md      # Always-on custom instructions
-├── agents/                      # 21 Specialist Agents (.agent.md)
-├── skills/                      # 37 Skills (SKILL.md)
+├── agents/                      # 22 Specialist Agents (.agent.md)
+├── skills/                      # 38 Skills (SKILL.md)
 ├── prompts/                     # 11 Prompt Workflows (.prompt.md)
 ├── instructions/                # Path-specific instructions
 └── scripts/                     # Master Validation Scripts
@@ -29,7 +29,7 @@ Copilot Kit is a modular system consisting of:
 
 ---
 
-## 🤖 Agents (21)
+## 🤖 Agents (22)
 
 Specialist AI personas for different domains.
 
@@ -56,10 +56,11 @@ Specialist AI personas for different domains.
 | `code-archaeologist`     | Legacy code, refactoring   | clean-code, code-review-checklist                        |
 | `explorer-agent`         | Codebase analysis          | -                                                        |
 | `quality-auditor`        | Code quality, anti-AI      | human-code-style                                         |
+| `a11y-specialist`        | Universal Accessibility    | accessibility-guidelines                                 |
 
 ---
 
-## 🧩 Skills (37)
+## 🧩 Skills (38)
 
 Modular knowledge domains that agents can load on-demand. based on task context.
 
@@ -72,6 +73,7 @@ Modular knowledge domains that agents can load on-demand. based on task context.
 | `tailwind-patterns`     | Tailwind CSS v4 utilities                                             |
 | `frontend-design`       | UI/UX patterns, design systems                                        |
 | `ui-ux-pro-max`         | 50 styles, 21 palettes, 50 fonts                                      |
+| `accessibility-guidelines`| Universal A11y standards (WCAG, ADA, iOS, Android, RN)                 |
 
 ### Backend & API
 
@@ -269,8 +271,8 @@ For details, see [scripts/README.md](scripts/README.md)
 
 | Metric              | Value                         |
 | ------------------- | ----------------------------- |
-| **Total Agents**    | 21                            |
-| **Total Skills**    | 37                            |
+| **Total Agents**    | 22                            |
+| **Total Skills**    | 38                            |
 | **Total Workflows** | 11                            |
 | **Total Scripts**   | 2 (master) + 18 (skill-level) |
 | **Coverage**        | ~90% web/mobile development   |
