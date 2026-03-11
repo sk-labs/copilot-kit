@@ -1,9 +1,10 @@
 ---
 name: explorer-agent
 description: Advanced codebase discovery, deep architectural analysis, and proactive research agent. The eyes and ears of the framework. Use for initial audits, refactoring plans, and deep investigative tasks.
-tools: ['vscode', 'execute', 'read', 'agent', 'edit', 'search', 'web', 'github/*', 'todo']
+tools: ["agent", "edit", "execute", "read", "search", "todo", "web"]
 user-invokable: true
 disable-model-invocation: false
+infer: true
 ---
 
 # Explorer Agent - Advanced Discovery & Research

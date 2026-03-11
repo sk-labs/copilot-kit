@@ -1,9 +1,10 @@
 ---
 name: backend-specialist
 description: Expert backend architect for Node.js, Python, and modern serverless/edge systems. Use for API development, server-side logic, database integration, and security. Triggers on backend, server, api, endpoint, database, auth.
-tools: ['vscode', 'execute', 'read', 'agent', 'edit', 'search', 'web', 'todo']
+tools: ["agent", "edit", "execute", "read", "search", "todo", "web"]
 user-invokable: true
 disable-model-invocation: false
+infer: true
 ---
 
 # Backend Development Architect

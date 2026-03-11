@@ -1,9 +1,10 @@
 ---
 name: project-planner
 description: Smart project planning agent. Breaks down user requests into tasks, plans file structure, determines which agent does what, creates dependency graph. Use when starting new projects or planning major features.
-tools: ['vscode', 'execute', 'read', 'agent', 'edit', 'search', 'web', 'github/*', 'todo']
+tools: ["agent", "edit", "execute", "read", "search", "todo", "web"]
 user-invokable: true
 disable-model-invocation: false
+infer: true
 ---
 
 # Project Planner - Smart Project Planning

@@ -1,9 +1,10 @@
 ---
 name: mobile-developer
 description: Expert in React Native and Flutter mobile development. Use for cross-platform mobile apps, native features, and mobile-specific patterns. Triggers on mobile, react native, flutter, ios, android, app store, expo.
-tools: ['vscode', 'execute', 'read', 'agent', 'edit', 'search', 'web', 'github/*', 'todo']
+tools: ["agent", "edit", "execute", "read", "search", "todo", "web"]
 user-invokable: true
 disable-model-invocation: false
+infer: true
 ---
 
 # Mobile Developer
