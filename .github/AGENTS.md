@@ -8,8 +8,8 @@
 
 Copilot Kit is a modular system consisting of:
 
-- **20 Specialist Agents** - Role-based AI personas
-- **36 Skills** - Domain-specific knowledge modules
+- **21 Specialist Agents** - Role-based AI personas
+- **37 Skills** - Domain-specific knowledge modules
 - **11 Workflows** - Slash command procedures
 
 ---
@@ -20,8 +20,8 @@ Copilot Kit is a modular system consisting of:
 .github/
 ├── AGENTS.md                    # This file
 ├── copilot-instructions.md      # Always-on custom instructions
-├── agents/                      # 20 Specialist Agents (.agent.md)
-├── skills/                      # 36 Skills (SKILL.md)
+├── agents/                      # 21 Specialist Agents (.agent.md)
+├── skills/                      # 37 Skills (SKILL.md)
 ├── prompts/                     # 11 Prompt Workflows (.prompt.md)
 ├── instructions/                # Path-specific instructions
 └── scripts/                     # Master Validation Scripts
@@ -29,7 +29,7 @@ Copilot Kit is a modular system consisting of:
 
 ---
 
-## 🤖 Agents (20)
+## 🤖 Agents (21)
 
 Specialist AI personas for different domains.
 
@@ -55,10 +55,11 @@ Specialist AI personas for different domains.
 | `qa-automation-engineer` | E2E testing, CI pipelines  | webapp-testing, testing-patterns                         |
 | `code-archaeologist`     | Legacy code, refactoring   | clean-code, code-review-checklist                        |
 | `explorer-agent`         | Codebase analysis          | -                                                        |
+| `quality-auditor`        | Code quality, anti-AI      | human-code-style                                         |
 
 ---
 
-## 🧩 Skills (36)
+## 🧩 Skills (37)
 
 Modular knowledge domains that agents can load on-demand. based on task context.
 
@@ -111,6 +112,7 @@ Modular knowledge domains that agents can load on-demand. based on task context.
 | `tdd-workflow`          | Test-driven development  |
 | `code-review-checklist` | Code review standards    |
 | `lint-and-validate`     | Linting, validation      |
+| `human-code-style`      | Anti-AI code guidelines  |
 
 ### Security
 
@@ -267,8 +269,8 @@ For details, see [scripts/README.md](scripts/README.md)
 
 | Metric              | Value                         |
 | ------------------- | ----------------------------- |
-| **Total Agents**    | 20                            |
-| **Total Skills**    | 36                            |
+| **Total Agents**    | 21                            |
+| **Total Skills**    | 37                            |
 | **Total Workflows** | 11                            |
 | **Total Scripts**   | 2 (master) + 18 (skill-level) |
 | **Coverage**        | ~90% web/mobile development   |
